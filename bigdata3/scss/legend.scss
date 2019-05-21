@@ -1,0 +1,93 @@
+// 图例
+.legend-dot{
+	position:absolute;
+	border-radius:50%;
+	width: 30px;
+	height: 30px;
+	z-index:2;
+}
+.legend{
+	position:absolute;
+	z-index:2;
+}
+.map-selector{
+		z-index:2;
+		position:absolute;
+		overflow: hidden;
+		padding-right: 10px;
+		background-color: rgba(16,92,183,0.5);
+		
+		*{
+			text-indent:0;
+		}
+		li{
+			opacity: 0.4;
+			margin-left: 10px;
+			overflow: hidden;
+			float:left;
+			cursor:pointer;
+			
+			&:hover{
+				opacity:0.8;
+			}
+			*{
+				cursor:pointer;
+			}
+			.legend-sm{
+				width: 20px;
+				height: 20px;
+				margin-right: 10px;
+				float: left;
+			}
+			p{
+				font-size: 16px;
+				color:#ffffff;
+				float: left;
+			}
+			div{
+				text-align:center;
+				line-height:40px;
+			}
+			.legend-dot{
+				position:relative;
+			}
+		}
+		.selected{
+			opacity:1;
+			&:hover{
+				opacity:1;
+			}
+		}
+}
+.BMap_stdMpPan{
+	display:none!important;
+}
+.BMap_noprint:nth-child(7){
+	opacity: 0;
+}
+.map_enlarge_whole{
+	cursor:pointer;
+	width: 30px;
+	height: 30px;
+	position:absolute;
+	top: 10px;
+	right: 10px;
+	background-position: center;
+	background-size:100%;
+	background-image: url(img/map_enlarge_whole.svg);
+	border-radius:50%;
+	background-repeat:no-repeat;
+	z-index:2;
+	opacity: 0.5;
+}
+.map_enlarge_whole:hover{
+	opacity: 0.8;
+}
+.map_enlarge_whole:hover{
+	opacity: 1;
+}
+.map-enlarged-whole{
+	.map_enlarge_whole{
+		background-image: url(img/map_shrink_whole.svg);
+	}
+}

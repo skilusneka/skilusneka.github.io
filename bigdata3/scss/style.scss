@@ -1,0 +1,58 @@
+@import  "./font.scss";
+@import  "./common.scss";
+@import  "./color.scss";
+@import  "./board.scss";
+@import  "./tag.scss";
+@import  "./tab.scss";
+@import  "./selector.scss";
+@import  "./selector_layui.scss";
+@import  "./slider.scss";
+@import  "./carousel.scss";
+@import  "./list.scss";
+@import  "./scroll_bar.scss";
+@import  "./form.scss";
+@import  "./table.scss";
+@import  "./laypage.scss";
+@import  "./button.scss";
+@import  "./popup.scss";
+@import  "./map-pop.scss";
+@import  "./legend.scss";
+@import  "./map-tools.scss";
+@import  "./animate_loading.scss";
+@import  "./animate_others.scss";
+
+// 按钮
+.btn-default{}
+.btn-disabled{}
+.btn-warning{}
+.btn-clicked{}
+.btn-s{}
+.btn-m{}
+.btn-l{}
+
+// 图表
+.chart-parking-distribution{}
+
+// 弹窗
+.popup{}
+.popup-close{}
+.popup-toSmall{}
+.popup-toBig{}
+
+// 间距
+@mixin gap{
+	margin:10px;
+}
+// 图例
+.map-legend-car{
+	
+}
+.button_list{
+	height: 40px;
+	line-height: 40px;
+	background-color: #01FFE4;
+	border-radius: 5px;
+	font-size: 14px;
+	margin-left: 10px;
+	padding: 0 5px;
+}

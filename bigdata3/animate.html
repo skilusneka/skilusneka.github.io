@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>动效</title>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="SyntaxHighlighter/shCore.min.js"></script>
+		<script type="text/javascript" src="SyntaxHighlighter/shBrushJScript.min.js"></script>
+		<link type="text/css" rel="stylesheet" href="SyntaxHighlighter/shCoreDefault.min.css" />
+		<script type="text/javascript">
+			SyntaxHighlighter.all();
+		</script>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="scss/style.css"/>
+		<style>
+		</style>
+	</head>
+	<body>
+		<div class="content_inner">
+		
+			<h3 id='top'>动效</h3>
+			<div class="sample">
+				<pre class="brush:js;">
+					动效适用场合：
+						1.需要提示内容变化
+						2.对页面上较为单调的元素进行修饰
+					动效的持续时间：
+						通常是0.5s
+						最长1s，最短0.3s
+					使用动效的方法：
+						1.使用css的transition样式
+							一次性的动画优先使用该方法
+							给元素添加transition样式,当元素样式改变时自动产生补间动画；
+							例：
+								div{
+									transition：0.5s;
+								}	
+						2.使用css的关键帧动画
+							适用于持续性的动画，如头部移入效果
+							例：
+								@keyframes run{
+									from{width:0%}to{width:100%}
+								}
+								div{
+									animation: run;
+									animation-duration:1s;
+									animation-play-state:infinite;
+								}
+						3.使用js
+							配合计时器改变元素的样式，用以上两种方式难以达到效果时使用该方法。
+							注意清除定时器！部分浏览器有不清除定时器动画越走越快的bug。
+							例：
+								var t =setInterval(function(){
+									if(t>100){
+										$(this).css('width',t+'px');
+										t++;
+									}else{
+										clearInterval(t);
+									}
+									
+								},500)；
+						4.使用插件
+							使用插件绑定的动画方法，视具体情况使用。
+				</pre>
+			</div>
+			<div class="title-line" id="html">
+				<h4>html代码</h4>
+				<button>复制</button>
+			</div>
+			<div class='code-html'>
+				<pre class="brush:js;">
+					见最顶部说明
+				</pre>
+			</div>
+			<div class="title-line" id="js">
+				<h4>js代码</h4>
+				<button>复制</button>
+			</div>
+			<div class='code-js'>
+				<pre class="brush:js;">
+					见最顶部说明
+				</pre>
+			</div>
+		</div>
+	</body>
+	
+</html>

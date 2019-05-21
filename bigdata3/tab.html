@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>选项卡</title>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="SyntaxHighlighter/shCore.min.js"></script>
+		<script type="text/javascript" src="SyntaxHighlighter/shBrushJScript.min.js"></script>
+		<link type="text/css" rel="stylesheet" href="SyntaxHighlighter/shCoreDefault.min.css" />
+		<script type="text/javascript">
+			SyntaxHighlighter.all();
+		</script>
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="layui/css/layui.css"/>
+		<link rel="stylesheet" type="text/css" href="scss/style.css" />
+		<style>
+			.sample{
+				background-color: #333333;
+				padding:40px;
+			}
+			.sample h3{
+				margin-top: 20px;
+			}
+			.board-index-four{
+				width: 800px;
+				height: 200px;
+			}
+			.board-index-four .innerbox{
+				color:#ffffff;
+			}
+			.button_list{
+				height: 40px;
+				line-height: 40px;
+				background-color: #01FFE4;
+				border-radius: 5px;
+				font-size: 14px;
+				margin-left: 10px;
+				padding: 0 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="content_inner">
+
+			<h3 id='top'>选项卡</h3>
+			<div class="sample">
+				<div class="layui-tab">
+					<ul class="layui-tab-title">
+						<li class="layui-this">
+							<span class='f12'>生活垃圾</span>
+							<span class='f12'>30.19k</span>
+						</li>
+						<li>
+							<span class='f12'>餐厨垃圾</span>
+							<span class='f12'>12345</span>
+						</li>
+						<li>
+							<span class='f12'>建筑垃圾</span>
+							<span class='f12'>56789</span>
+						</li>
+					</ul>
+					<div class="layui-tab-content">
+						<div class="layui-tab-item layui-show">
+							<div class="board-index-four"><div class="innerbox">1</div></div>
+						</div>
+						<div class="layui-tab-item">
+							<div class="board-index-four"><div class="innerbox">2</div></div>
+						</div>
+						<div class="layui-tab-item">
+							<div class="board-index-four"><div class="innerbox">3</div></div>
+						</div>
+					</div>
+				</div>
+
+				<h3 class="tab-title">
+					趋势分析
+				</h3>
+			</div>
+			<div class="title-line" id="description">
+					<h4>说明</h4>
+					<a class="button_list" href="layui.zip" download="layui.zip">下载layui压缩包</a> 
+					<a class="button_list" href="scss/board.scss" download="board.scss">下载board.scss</a> 
+			 
+				</div>
+				<div class='code-html'>
+						<pre class="brush:js;">
+							1.某些文件需要单独引入
+							2.使用board.scss文件
+							其中board-index-four类名需要给个宽高度
+						</pre>
+				</div>
+			<div class="title-line" id="html">
+				<h4>html代码</h4>
+				<button>复制</button>
+			</div>
+			<div class='code-html'>
+				<pre class="brush:js;">
+						<div class="layui-tab">
+								<ul class="layui-tab-title">
+									<li class="layui-this">
+										<span class='f12'>生活垃圾</span>
+										<span class='f12'>30.19k</span>
+									</li>
+									<li>
+										<span class='f12'>餐厨垃圾</span>
+										<span class='f12'>12345</span>
+									</li>
+									<li>
+										<span class='f12'>建筑垃圾</span>
+										<span class='f12'>56789</span>
+									</li>
+								</ul>
+								<div class="layui-tab-content">
+									<div class="layui-tab-item layui-show">
+										<div class="board-index-four"><div class="innerbox">1</div></div>
+									</div>
+									<div class="layui-tab-item">
+										<div class="board-index-four"><div class="innerbox">2</div></div>
+									</div>
+									<div class="layui-tab-item">
+										<div class="board-index-four"><div class="innerbox">3</div></div>
+									</div>
+								</div>
+							</div>
+			
+							<h3 class="tab-title">
+								趋势分析
+							</h3>
+				</pre>
+			</div>
+			<div class="title-line" id="js">
+				<h4>js代码</h4>
+				<button>复制</button>
+			</div>
+			<div class='code-js'>
+				<pre class="brush:js;">
+					<link rel="stylesheet" type="text/css" href="layui/css/layui.css"/>
+					<script src="layui/layui.js" type="text/javascript" charset="utf-8"></script>
+					<script type="text/javascript">
+						//注意：选项卡 依赖 element 模块，否则无法进行功能性操作
+						layui.use('element', function(){
+						  var element = layui.element;
+						});
+					</script>
+				</pre>
+			</div>
+		</div>
+	</body>
+	<script src="layui/layui.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		//注意：选项卡 依赖 element 模块，否则无法进行功能性操作
+		layui.use('element', function(){
+		  var element = layui.element;
+		});
+
+	</script>
+</html>

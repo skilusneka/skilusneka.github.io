@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>五福通信大数据三期规范</title>
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="layui/css/layui.css"/>
+		<link rel="stylesheet" type="text/css" href="scss/style.css"/>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="header">
+			<h2>
+				五福通信大数据三期规范
+			</h2>
+			<ul>
+				<li>顶部</li>
+				<li>html/scss</li>
+				<li>js</li>
+				<a href="scss/common.scss" download="common.scss" id="alink"><li class='layui-btn layui-btn-xs layui-btn-normal downBtn'>下载scss</li></a>
+			</ul>
+		</div>
+		<div class="nav">
+			<dl>
+				<dt>说明文档</dt>
+				<dd id="description" class='current'>说明文档</dd>
+			</dl>
+			<dl>
+				<dt>整体规范</dt>
+				<dd id='common'>全局样式</dd>
+				<dd id='font'>字体</dd>
+				<dd id='color'>配色</dd>
+			</dl>
+			<dl>
+				<dt>元素规范</dt>
+				<dd id='board'>元素展板</dd>
+				<dd id='tag'>悬浮窗</dd>
+				<dd id='tab'>选项卡</dd>
+				<dd id='selector'>下拉选择框</dd>
+				<dd id='selector_layui'>下拉_layui</dd>
+				<dd id='slider'>滑动条</dd>
+				<dd id='carousel'>轮播图</dd>
+				<dd id='list'>列表</dd>
+				<dd id='scroll_bar'>滚动条</dd>
+				<dd id='form'>表单</dd>
+				<dd id='table'>表格</dd>
+				<dd id='laypage'>分页</dd>
+				<dd id='button'>按钮</dd>
+				<dd id='popup'>弹窗</dd>
+			</dl>
+			<dl>
+				<dt>地图规范</dt>
+				<dd id='use-map'>调用地图</dd>
+				<dd id='legend'>图例与组件</dd>
+				<dd id='heat-map'>热力图</dd>
+				<dd id='trail'>轨迹</dd>
+				<dd id="map-area">行政区划</dd>
+			</dl>
+			<dl>
+				<dt>动效</dt>
+				<dd id='animate'>动效说明</dd>
+				<dd id='animate_loading'>加载</dd>
+				<dd id='animate_others'>其他</dd>
+			</dl>
+			<dl>
+				<dt>图表</dt>
+				<dd id='Echart'>图表</dd>
+			</dl>
+			<dl>
+				<dt>内容下载</dt>
+				<dd id='download'>下载页面</dd>
+			</dl>
+		</div>
+
+		<iframe src="description.html" frameborder="0" class='content'>
+			
+		</iframe>
+	</body>
+	<script type="text/javascript">
+		$(function() {
+			var curPage = 'description.html'; 
+			
+			if(curPage=='description.html'){
+				$('#alink').css('display','none')
+			}
+			
+			// 侧边导航点击切换
+			$('body>.nav dd').click(function() {
+				
+				$('body>.nav dd').removeClass('current');
+				$(this).addClass('description');
+				curPage=$(this).prop('id')+".html";
+				if(curPage!=='description.html'){
+					$('#alink').css('display','inline-block')
+				}else{
+					$('#alink').css('display','none')
+				}
+				$('iframe').prop('src', curPage + '#top');
+				$('#alink').attr('src','scss/'+$(this).prop('id')+'.scss');
+				$('#alink').attr('href','scss/'+$(this).prop('id')+'.scss');
+				$('#alink').attr('download',$(this).prop('id')+'.scss');
+			});
+			// 面包屑导航
+			$('body>.header>ul li:first-child').click(function() {
+				$('iframe').prop('src', curPage + '#top');
+			});
+			$('body>.header>ul li:nth-child(2)').click(function() {
+				$('iframe').prop('src', curPage + '#html');
+			});
+			$('body>.header>ul li:nth-child(3)').click(function() {
+				$('iframe').prop('src', curPage + '#js');
+			});
+		});
+		
+	</script>
+
+</html>

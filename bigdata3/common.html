@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>全局样式</title>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="SyntaxHighlighter/shCore.min.js"></script>
+		<script type="text/javascript" src="SyntaxHighlighter/shBrushJScript.min.js"></script>
+		<link type="text/css" rel="stylesheet" href="SyntaxHighlighter/shCoreDefault.min.css" />
+		<script type="text/javascript">
+			SyntaxHighlighter.all();
+		</script>
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="scss/style.css" />
+	</head>
+	<body>
+		<div class="content_inner">
+
+			<h3 id='top'>全局样式</h3>
+			<div class="sample">
+				无演示
+			</div>
+			<div class="title-line" id="html">
+				<h4>scss代码</h4>
+				<button>复制</button>
+			</div>
+			<div class='code-html'>
+				<pre class="brush:js;">
+					// 全局
+					*{
+						margin: 0;
+						padding: 0;
+						box-sizing: border-box;
+						list-style:none;
+						text-decoration: none;
+						outline:none;
+						appearance:none;
+						font-family:'微软雅黑','PingFang SC';
+						cursor:default;
+						resize: none;
+					}
+					a{
+						cursor:pointer;
+						display:inline-block;
+					}
+					textarea,button{
+						font-style:normal;
+						font-size:100%;
+					}
+					img,.iconfont{
+						vertical-align: middle;
+					}
+					// 超出部分自动隐藏
+					.elli{
+					    text-overflow: -o-ellipsis-lastline;
+					    overflow: hidden;
+					    text-overflow: ellipsis;
+					    display: -webkit-box;
+					    -webkit-line-clamp: 2;
+					    -webkit-box-orient: vertical;
+					
+					}
+					// 全局点击
+					.hover{
+						&:hover {
+					        color: rgba(255, 255, 255, .6);
+					        background-image: linear-gradient( rgba(0, 0, 0, .05), rgba(0, 0, 0, .06));
+					    }
+					}
+					.active{
+						&:active {
+					        color: rgba(255, 255, 255, .6);
+					        background-image: linear-gradient( rgba(0, 0, 0, .08), rgba(0, 0, 0, .09));
+					    }
+					}
+					// 文字对齐方式
+					.text-l{
+						text-align:left;
+					}
+					.text-r{
+						text-align:right;
+					}
+					.text-c{
+						text-align:center;
+					}
+					//隐藏
+					.hidden{
+						display:none;
+					}
+					// 清除浮动
+					.clearfix{
+						*zoom: 1;
+					    &:after {
+					        content: '';
+					        height: 0;
+					        display: block;
+					        clear: both;
+					        visibility: hidden;
+					    }
+					}
+					// 元素百分比宽度
+					.w10p{
+						width:10%!important;
+					}
+					.w20p{
+						width:20%!important;
+					}
+					.w30p{
+						width:30%!important;
+					}
+					.w40p{
+						width:40%!important;
+					}
+					.w50p{
+						width:50%!important;
+					}
+					.w60p{
+						width:60%!important;
+					}
+					.w70p{
+						width:70%!important;
+					}
+					.w80p{
+						width:80%!important;
+					}
+					.w90p{
+						width:90%!important;
+					}
+					.w100p{
+						width:100%!important;
+					}
+				</pre>
+			</div>
+			 
+			<div class="title-line" id="js">
+				<h4>js代码</h4>
+				<button>复制</button>
+			</div>
+			<div class='code-js'>
+				<pre class="brush:js;">无</pre>
+			</div>
+		</div>
+	</body>
+</html>

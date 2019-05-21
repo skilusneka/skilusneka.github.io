@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>轮播图</title>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="SyntaxHighlighter/shCore.min.js"></script>
+		<script type="text/javascript" src="SyntaxHighlighter/shBrushJScript.min.js"></script>
+		<link type="text/css" rel="stylesheet" href="SyntaxHighlighter/shCoreDefault.min.css" />
+		<script type="text/javascript">
+			SyntaxHighlighter.all();
+		</script>
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="layui/css/layui.css" media="all">
+		<link rel="stylesheet" type="text/css" href="scss/style.css" />
+
+		<style>
+			.sample {
+				background-color: #333333;
+				padding: 40px;
+			}
+			.sample .layui-carousel>[carousel-item]>div>div{
+				width: 100%;
+				height:100%;
+			}
+			.button_list{
+				height: 40px;
+				line-height: 40px;
+				background-color: #01FFE4;
+				border-radius: 5px;
+				font-size: 14px;
+				margin-left: 10px;
+				padding: 0 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="content_inner">
+
+			<h3 id='top'>轮播图</h3>
+			<div class="sample">
+				<div class="layui-carousel" id="test1">
+					<div carousel-item>
+						<div><div class="board-index"></div></div>
+						<div><div class="board-index-four"><div class="innerbox"></div></div></div>
+						<div><div class="board-index-four"><div class="innerbox"></div></div></div>
+					</div>
+				</div>
+			</div>
+			<div class="title-line" id="html">
+				<h4>html代码</h4>
+				<button>复制</button>
+			</div>
+			<div class='code-html'>
+				<pre class="brush:js;">
+					<div class="layui-carousel" id="test1">
+						<div carousel-item>
+							<div><div class="board-index"></div></div>
+							<div><div class="board-index-four"><div class="innerbox"></div></div></div>
+							<div><div class="board-index-four"><div class="innerbox"></div></div></div>
+						</div>
+					</div>
+				</pre>
+			</div>
+			<div class="title-line" id="description">
+					<h4>说明</h4>
+					<a class="button_list" href="layui.zip" download="layui.js">下载layui.zip压缩包</a> 
+			 
+			 
+				</div>
+				<div class='code-html'>
+						<pre class="brush:js;">
+							1.某些文件需要单独引入
+							2.轮播图内部宽高需要自己设置
+							.layui-carousel>[carousel-item]>div>div{
+								width: 100%;
+								height:100%;
+							}
+						</pre>
+				</div>
+			<div class="title-line" id="js">
+				<h4>js代码</h4>
+				<button>复制</button>
+			</div>
+			<div class='code-js'>
+				<pre class="brush:js;">
+					<script src="layui/layui.js"></script>
+					<link rel="stylesheet" href="layui/css/layui.css">
+					<script>
+						layui.use('carousel', function() {
+							var carousel = layui.carousel;
+							//建造实例
+							carousel.render({
+								elem: '#test1',
+								width: '100%' //设置容器宽度
+									,
+								arrow: 'hover' //始终显示箭头
+								//,anim: 'updown' //切换动画方式
+								,
+								autoplay:false
+							});
+						});
+					</script>
+				</pre>
+			</div>
+		</div>
+	</body>
+	<script src="layui/layui.js"></script>
+	<script>
+		layui.use('carousel', function() {
+			var carousel = layui.carousel;
+			//建造实例
+			carousel.render({
+				elem: '#test1',
+				width: '100%' //设置容器宽度
+					,
+				arrow: 'hover' //始终显示箭头
+				//,anim: 'updown' //切换动画方式
+				,
+				autoplay:false
+			});
+		});
+	</script>
+</html>

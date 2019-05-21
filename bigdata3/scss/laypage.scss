@@ -1,0 +1,61 @@
+// 分页
+.laypage{
+	height: 40px;
+	background-color: rgba(31,159,255,0.2);
+	.layui-laypage{
+		margin:5px 0;
+		height:30px;
+		overflow: hidden;
+	}
+}
+.layui-laypage a, .layui-laypage span{
+	background: none;
+	border:none;
+	font-size: 12px;
+	color:#1F9FFF;
+	margin:0;
+	padding:0 14px;
+	height: 26px;
+	text-indent:0;
+	margin-top: -10px;
+}
+.layui-laypage .layui-laypage-curr .layui-laypage-em{
+	background-color: #1A6AFF;
+}
+
+.layui-laypage-limits select{
+	margin-top: 15px;
+	width: 70px;
+	height: 20px;
+	background: none;
+	border:1px solid rgba(255,255,255,0.2);
+	color:#1F9FFF;
+	border-radius:2px;
+	
+}
+.layui-laypage-skip input{
+	margin-top: 2px;
+	width: 40px;
+	height: 26px;
+	background:none;
+	border:rgba(255,255,255,0.2) 1px solid;
+	cursor:text;
+}
+.layui-laypage-skip input:focus{
+	border-color: #1A6AFF!important;
+}
+.layui-laypage-skip button{
+	width: 46px;
+	height: 26px;
+	margin-top: 2px;
+	color:#ffffff;
+	background-color: #1A6AFF;
+	border:rgba(255,255,255,0.2) solid 1px;
+	line-height:26px;
+}
+.layui-laypage-curr em{
+	font-size: 12px;
+}
+.layui-laypage a:hover{
+	color:#ffffff;
+}

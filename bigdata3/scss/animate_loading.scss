@@ -1,0 +1,663 @@
+// 读取动效
+// 波浪形
+@-webkit-keyframes load-wave{
+	0%,100%{
+	        height: 40px;
+	        background: lightgreen;
+	}
+	50%{
+	        height: 70px;
+	        margin: -15px 0;
+	        background: lightblue;
+	}
+}
+	
+	.loading-wave{
+		width: 80px;
+		height: 70px;
+		margin: 0 auto;
+		
+		span{
+		            display: block;
+					margin-right: 10px;
+					float:left;
+		            width: 8px;
+		            height: 100%;
+		            border-radius: 4px;
+		            background: lightgreen;
+		           animation: load-wave 1s ease infinite;
+		}
+		
+	}
+	
+			.loading-wave span:nth-child(2){
+			           animation-delay:0.2s;
+			}
+			.loading-wave span:nth-child(3){
+			           animation-delay:0.4s;
+			}
+			.loading-wave span:nth-child(4){
+			           animation-delay:0.6s;
+			}
+			.loading-wave span:nth-child(5){
+			           animation-delay:0.8s;
+			}
+// 滑条形
+@-webkit-keyframes load-slide-color{
+            0%{
+                background: lightgreen;
+            }
+            100%{
+                background: lightblue;
+            }
+}
+@-webkit-keyframes load-slide{
+0%{
+                background: lightgreen;
+}
+100%{
+                margin-left: 142px;
+                background: lightblue;
+}
+}
+.loading-slide{
+            width: 150px;
+            height: 4px;
+            border-radius: 2px;
+            margin: 0 auto;
+            position: relative;
+            background: lightgreen;
+           animation: load-slide-color 1.04s ease-in infinite alternate;
+		span{
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: lightgreen;
+            position: absolute;
+            margin-top: -7px;
+            margin-left:-8px;
+           animation: load-slide 1.04s ease-in infinite alternate;
+		}
+}
+// 渐进式点
+@-webkit-keyframes opacityChange{
+            0%{
+                opacity: 1;
+            }
+            100%{
+                opacity: 0;
+            }
+}
+.loading-stepDot{
+	width: 150px;
+	height: 15px;
+	margin: 0 auto;
+	span{
+		display: inline-block;
+		width: 15px;
+		height: 100%;
+		margin-right: 5px;
+		border-radius: 50%;
+		background: lightgreen;
+		-webkit-animation: opacityChange 1.04s ease infinite;
+	}
+	span:last-child{
+	    margin-right: 0px; 
+	}
+	span:nth-child(1){
+	   animation-delay:0.13s;
+	}
+	span:nth-child(2){
+	   animation-delay:0.26s;
+	}
+	span:nth-child(3){
+	   animation-delay:0.39s;
+	}
+	span:nth-child(4){
+	   animation-delay:0.52s;
+	}
+	span:nth-child(5){
+	   animation-delay:0.65s;
+	}
+}
+// 弹簧
+ @-webkit-keyframes load-spring{
+            0%{
+                opacity: 1;
+               transform: translate(0px);
+            }
+            100%{
+                opacity: 0.2;
+               transform: translate(150px);
+            }
+        }
+.loading-spring{
+            width: 150px;
+            height: 15px;
+            margin: 0 auto;
+            position: relative;
+			 span{
+			    position: absolute;
+			    width: 15px;
+			    height: 100%;
+			    border-radius: 50%;
+			    background: lightgreen;
+			   animation: load-spring 1.04s ease-in infinite alternate;
+			}
+			
+			span:nth-child(1){
+			   animation-delay:0.13s;
+			}
+			span:nth-child(2){
+			   animation-delay:0.26s;
+			}
+			span:nth-child(3){
+			   animation-delay:0.39s;
+			}
+			span:nth-child(4){
+			   animation-delay:0.52s;
+			}
+			span:nth-child(5){
+			   animation-delay:0.65s;
+			}
+			
+}
+// 翻滚
+        @-webkit-keyframes load-rolling{
+            0%{
+                opacity: 1;
+            }
+            100%{
+                opacity: 0;
+               transform: rotate(90deg);
+            }
+        }
+        
+	.loading-rolling,.loading-rolling-shrink{
+            width: 150px;
+            height: 15px;
+            margin: 0 auto;
+			span{
+			    display: inline-block;
+			    width: 15px;
+			    height: 100%;
+			    margin-right: 5px;
+			    background: lightgreen;
+			   transform-origin: right bottom;
+			   animation: load-rolling 1s ease infinite;
+			}
+			span:last-child{
+			    margin-right: 0px; 
+			}
+			
+			span:nth-child(1){
+			   animation-delay:0.13s;
+			}
+			span:nth-child(2){
+			   animation-delay:0.26s;
+			}
+			span:nth-child(3){
+			   animation-delay:0.39s;
+			}
+			span:nth-child(4){
+			   animation-delay:0.52s;
+			}
+			span:nth-child(5){
+			   animation-delay:0.65s;
+			}
+			
+        }
+// 翻滚缩小
+
+@-webkit-keyframes load-rolling-shrink{
+            0%{
+                opacity: 1;
+				transform: scale(1);
+            }
+            100%{
+                opacity: 0;
+                transform: rotate(90deg) scale(.3);
+            }
+        }
+		.loading-rolling-shrink{
+			span{
+				animation: load-rolling-shrink 1s ease infinite;
+			}
+		}
+// 点圈
+.loading-dot-circle{
+	            width: 100px;
+	            height: 100px;
+	            position: relative;
+	            margin: 0 auto;
+	        span{
+	            display: inline-block;
+	            width: 16px;
+	            height: 16px;
+	            border-radius: 50%;
+	            background: lightgreen;
+	            position: absolute;
+	            -webkit-animation: opacityChange 1.04s ease infinite;
+			}
+	        span:nth-child(1){
+	            left: 0;
+	            top: 50%;
+	            margin-top:-8px;
+	            -webkit-animation-delay:0.13s;
+	        }
+	        span:nth-child(2){
+	            left: 14px;
+	            top: 14px;
+	            -webkit-animation-delay:0.26s;
+	        }
+			span:nth-child(3){
+	            left: 50%;
+	            top: 0;
+	            margin-left: -8px;
+	            -webkit-animation-delay:0.39s;
+	        }
+	        span:nth-child(4){
+	            top: 14px;
+	            right:14px;
+	            -webkit-animation-delay:0.52s;
+	        }
+	       span:nth-child(5){
+	            right: 0;
+	            top: 50%;
+	            margin-top:-8px;
+	            -webkit-animation-delay:0.65s;
+	        }
+	       span:nth-child(6){
+	            right: 14px;
+	            bottom:14px;
+	            -webkit-animation-delay:0.78s;
+	        }
+	        span:nth-child(7){
+	            bottom: 0;
+	            left: 50%;
+	            margin-left: -8px;
+	            -webkit-animation-delay:0.91s;
+	        }
+	       span:nth-child(8){
+	            bottom: 14px;
+	            left: 14px;
+	            -webkit-animation-delay:1.04s;
+	        }
+}
+// 卫星
+  @-webkit-keyframes load-satellite{
+            0%{
+                -webkit-transform: rotate(0deg);
+                border-color: lightgreen;
+            }
+            100%{
+                -webkit-transform: rotate(360deg);
+                border-color: lightblue;
+            }
+        }
+
+.loading-satellite{
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto;
+            position: relative;
+            border:5px solid lightgreen;
+            -webkit-animation: load-satellite 2s linear infinite;
+        
+         span{
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: lightgreen;
+            position: absolute;
+            left: 50%;
+            margin-top: -15px;
+            margin-left: -15px;
+            -webkit-animation: load-slide-color 2s linear infinite;
+        }
+}
+// 条
+         
+        @-webkit-keyframes load-bar{
+            0%{
+                -webkit-transform: translate(-150px);
+            }
+            50%{
+                -webkit-transform: translate(0);
+            }
+            100%{
+                -webkit-transform: translate(150px);
+            }
+        }
+
+.loading-bar{
+            width: 150px;
+            height: 8px;
+            border-radius: 4px;
+            margin: 0 auto;
+            position: relative;
+            background: lightblue;
+            overflow: hidden;
+			span{
+			    display:block;
+			    width: 100%;
+			    height: 100%;
+			    border-radius: 3px;
+			    background: lightgreen;
+			    -webkit-animation: load-bar 4s linear infinite;
+			}
+        }
+// 网球
+		  @-webkit-keyframes load-tennis{
+		    0%,100%{
+		        -webkit-transform: translate(70px);
+		    }
+		    20%{
+		        width: 50px;
+		        height: 30px;
+		        margin-top:-15px;
+		        -webkit-transform: translate(0px);
+		    }
+		    30%{
+		        width: 20px;
+		        height: 60px;
+		        margin-top:-30px;
+		        -webkit-transform: translate(0px);
+		    }
+		    35%{
+		        width: 50px;
+		        height: 30px;
+		        margin-top:-15px;
+		        -webkit-transform: translate(5px);
+		        background: lightblue;
+		    }
+		    70%{
+		        width: 50px;
+		        height: 30px;
+		        margin-top:-15px;
+		        -webkit-transform: translate(160px);
+		    }
+		    80%{
+		        width: 20px;
+		        height: 60px;
+		        margin-top:-30px;
+		        -webkit-transform: translate(160px);
+		    }
+		    85%{
+		        width: 50px;
+		        height: 30px;
+		        margin-top:-15px;
+		        -webkit-transform: translate(155px);
+		        background: lightgreen;
+		    }
+		 
+		}
+		 
+.loading-tennis{
+            width: 200px;
+            height: 60px;
+            margin: 0 auto;
+            position: relative;
+			span{
+			    width: 50px;
+			    height: 30px;
+			    border-radius: 50%;
+			    background: lightgreen;
+			    position: absolute;
+			    top: 50%;
+			    margin-top: -15px;
+			    overflow: hidden;
+			    -webkit-animation: load-tennis 2.08s linear infinite;
+			}
+        }
+        
+// 三个圆
+ @-webkit-keyframes load-tri-circle{
+            0%{
+                -webkit-transform: rotate(0deg);
+            }
+            33.3%{
+                -webkit-transform: rotate(120deg);
+            }
+            66.6%{
+                -webkit-transform: rotate(240deg);
+            }
+            100%{
+                -webkit-transform: rotate(360deg);
+            }
+        }
+        @-webkit-keyframes load-tri-circle-color{
+            0%,100%{
+                background: #99CC66;
+            }
+            33.3%{
+                background: #FFFF66;
+            }
+            66.6%{
+                background: #FF6666;
+            }
+        }
+.loading-tri-circle{
+            width: 60px;
+            height: 60px;
+            margin: 0 auto;
+            position: relative;
+            -webkit-animation: load-tri-circle 3s linear infinite;
+        div{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+         span{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #99CC66;
+            position: absolute;
+            left: 50%;
+            margin-top: -10px;
+            margin-left: -10px;
+            -webkit-animation: load-tri-circle-color 3s ease infinite;
+        }
+       
+        div:nth-child(2){
+            -webkit-transform: rotate(120deg);
+        }
+        div:nth-child(3){
+            -webkit-transform: rotate(240deg);
+        }
+        div:nth-child(2) span{
+            -webkit-animation-delay: 1s;
+        }
+        div:nth-child(3) span{
+            -webkit-animation-delay: 2s;
+        }
+
+}
+// 中心波纹
+@-webkit-keyframes wave5 {
+	    0% {
+	        -webkit-transform: scale(1);
+	    }
+	    10% {
+	        -webkit-transform: scale(1.06);
+	        border-color: #5ad;
+	    }
+	    20% {
+	        -webkit-transform: scale(1);
+	    }
+	    100% {
+	        -webkit-transform: scale(1);
+	        border-color: transparent;
+	    }
+	}
+	@-webkit-keyframes wave1 {
+	    0% {
+	        -webkit-transform: scale(1);
+	    }
+	    10% {
+	        -webkit-transform: scale(1.3);
+	        border-color: #5ad;
+	    }
+	    20% {
+	        -webkit-transform: scale(1);
+	    }
+	    100% {
+	        -webkit-transform: scale(1);
+	        border-color: transparent;
+	    }
+	}
+	@-webkit-keyframes wave2{
+	    0%{
+	        -webkit-transform:scale(1);
+	    }
+	    10%{
+	        -webkit-transform:scale(1.15);
+	        border-color: #5ad;
+	    }
+	    20%{
+	        -webkit-transform:scale(1);
+	    }
+	    100%{
+	        -webkit-transform:scale(1);
+	        border-color:transparent;
+	    }
+	}
+	@-webkit-keyframes wave3 {
+	    0% {
+	        -webkit-transform: scale(1);
+	    }
+	    10% {
+	        -webkit-transform: scale(1.1);
+	        border-color: #5ad;
+	    }
+	    20% {
+	        -webkit-transform: scale(1);
+	    }
+	    100% {
+	        -webkit-transform: scale(1);
+	        border-color: transparent;
+	    }
+	}
+	@-webkit-keyframes wave4 {
+	    0% {
+	        -webkit-transform: scale(1);
+	    }
+	    10% {
+	        -webkit-transform: scale(1.075);
+	        border-color: #5ad;
+	    }
+	    20% {
+	        -webkit-transform: scale(1);
+	    }
+	    100% {
+	        -webkit-transform: scale(1);
+	        border-color: transparent;
+	    }
+	}
+.loading-wave-center{
+		margin:0 auto;
+	    width:100px;
+	    height:100px;
+	    position:relative;
+	.circle:nth-child(1) {
+	    width: 20px;
+	    height: 20px;
+	    border-radius: 50%;
+	    border-width: 2px;
+	    border-style: solid;
+	    border-color: transparent;
+	    -webkit-transform-origin: center center;
+	    -webkit-animation: wave1 1.8s ease-in infinite;
+	    -webkit-animation-delay: 0.1s;
+	    position: absolute;
+	    top: 40px;
+	    left: 40px;
+	}
+	
+	.circle:nth-child(2){
+	    width:40px;
+	    height:40px;
+	    border-radius:50%;
+	    border-width:2px;
+	    border-style:solid;
+	    border-color:transparent;
+	    -webkit-transform-origin:center center;
+	    -webkit-animation:wave2 1.8s ease-in infinite;
+	    -webkit-animation-delay: 0.2s;
+	    position:absolute;
+	    top:30px;
+	    left:30px;
+	}
+	
+	.circle:nth-child(3) {
+	    width: 60px;
+	    height: 60px;
+	    border-radius: 50%;
+	    border-width: 2px;
+	    border-style: solid;
+	    border-color: transparent;
+	    -webkit-transform-origin: center center;
+	    -webkit-animation: wave3 1.8s ease-in infinite;
+	    -webkit-animation-delay: 0.3s;
+	    position: absolute;
+	    top: 20px;
+	    left: 20px;
+	}
+	
+	.circle:nth-child(4) {
+	    width: 80px;
+	    height: 80px;
+	    border-radius: 50%;
+	    border-width: 2px;
+	    border-style: solid;
+	    border-color: transparent;
+	    -webkit-transform-origin: center center;
+	    -webkit-animation: wave4 1.8s ease-in infinite;
+	    -webkit-animation-delay: 0.4s;
+	    position: absolute;
+	    top: 10px;
+	    left: 10px;
+	}
+	
+	.circle:nth-child(5) {
+	    width: 100px;
+	    height: 100px;
+	    border-radius: 50%;
+	    border-width: 2px;
+	    border-style: solid;
+	    border-color: transparent;
+	    -webkit-transform-origin: center center;
+	    -webkit-animation: wave5 1.8s ease-in infinite;
+	    -webkit-animation-delay: 0.5s;
+	    position: absolute;
+	    top: 0px;
+	    left: 0px;
+	}
+	
+}
+// 拓展
+.expand {
+	width:800px;
+	margin:0 auto;
+	 span{
+		 display:block;
+		width:100%; 
+		height:1px; 
+		margin:2px 0; 
+		background:#2187e7; 
+		box-shadow:0px 0px 10px 1px rgba(0,198,255,0.7);
+		-moz-animation:fullexpand 3s ease-out infinite;
+		-webkit-animation:fullexpand 3s ease-out infinite;
+	}
+}
+
+
+@-webkit-keyframes fullexpand {
+	0%  { width:0px;}
+	100%{ width:100%;}	
+}

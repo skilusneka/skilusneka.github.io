@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>图例与组件</title>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="SyntaxHighlighter/shCore.min.js"></script>
+		<script type="text/javascript" src="SyntaxHighlighter/shBrushJScript.min.js"></script>
+		<link type="text/css" rel="stylesheet" href="SyntaxHighlighter/shCoreDefault.min.css" />
+		<script type="text/javascript">
+			SyntaxHighlighter.all();
+		</script>
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="layui/css/layui.css" />
+		<link rel="stylesheet" type="text/css" href="scss/style.css" />
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=6zT0F4TO4nog7pnIUa7k5vjupxleQKqh"></script>
+		<script src="layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+
+			/* 写进页面的样式 */
+			.BMap_button{
+				width: 30px;
+				height: 30px;
+				.BMap_smcbg{
+					display:none!important;
+				}
+			}
+			.BMap_stdMpZoom{
+				height:70px!important;
+			}
+			.BMap_stdMpZoom .BMap_button{
+				background-color: rgba(26,106,255,0.5);
+				background-size: 60%;
+				background-position: center!important;
+				background-image: url(img/map_zoomin.svg)!important;
+			}
+			.BMap_stdMpZoom .BMap_stdMpZoomOut{
+				margin-top: 10px;
+				background-image: url(img/map_zoomout.svg)!important;
+			}
+			.BMap_stdMpZoom .BMap_button:hover{
+				background-color: rgba(26,106,255,0.8);
+			}
+			.BMap_stdMpZoom .BMap_button:active{
+				background-color: rgba(26,106,255,1);
+			}
+			
+			
+			.sample{
+				position:relative;
+				background-color: #333333;
+				width: 100%;
+				height:200px;
+				margin:0;
+			}
+			.sample .legend-dot{
+				background-color: #009900;
+			}
+			.sample>.legend-dot{
+				top:120px;
+				left:120px;
+			}
+			.sample img{
+				top: 80px;
+				left: 100px;
+			}
+			.sample img:nth-child(3){
+				top: 80px;
+				left: 160px;
+			}
+			ul{
+				width:auto;
+			}
+			#allmap{
+				position:absolute;
+				width: 100%;
+				height: 100%;
+				z-index:1;
+			}
+			.button_list{
+				height: 50px;
+				line-height: 50px;
+				background-color: #01FFE4;
+				border-radius: 5px;
+				font-size: 14px;
+				padding: 0 5px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="content_inner">
+
+			<h3 id='top'>图例与组件<span style="color:aqua">(依赖scss/legend.scss、layui/css/layui.css、layui/layui.js、js/jquery.min.js文件)</span></h3>
+			<div class="sample">
+				<!-- 放大缩小 -->
+				<div class="map_enlarge_whole"></div>
+				<!-- 图例 -->
+				<ul class="map-selector">
+					<li class='selected' index='1'>
+						<div class="legend-sm">
+							<img src="img/legend1.svg">
+						</div>
+						<p>餐厅</p>
+					</li>
+					<li class='selected' index='2'>
+						<div class="legend-sm">
+							<img src="img/legend2.svg">
+						</div>
+						<p>试点小区</p>
+					</li>
+				</ul>
+				<!-- 地图 -->
+				<div id='allmap'>
+
+				</div>
+			</div>
+			<div class="title-line" id="description">
+					<h4>说明</h4>
+					<a class="button_list" href="img/legend1.svg" download="legend1.svg">地图左上角餐厅图标</a> 
+					<a class="button_list" href="img/legend2.svg" download="legend2.svg">地图左上角试点小区图标</a> 
+					<a class="button_list" href="img/map_zoomin.svg" download="map_zoomin.svg">地图右边放大按按钮</a> 
+					<a class="button_list" href="img/map_zoomout.svg" download="map_zoomout.svg">地图左边放大按按钮</a> 
+					<a class="button_list" href="img/map_enlarge_whole.svg" download="map_enlarge_whole.svg">地图</a> 
+					<a class="button_list" href="img/popup_glow.png" download="popup_glow.png">地图自定义弹框图片</a>
+					<a class="button_list" href="js/InfoBox_min.js" download="InfoBox_min.js">自定义弹框引入</a>
+				 
+				</div>
+				<div class='code-html'>
+						<pre class="brush:js;">
+						 
+							图标以及图片需要单独下载,上面有下载链接
+						 
+
+						</pre>
+				</div>
+			<div class="title-line" id="html">
+				<h4>html代码</h4>
+				<button>复制</button>
+			</div>
+			<div class='code-html'>
+				<pre class="brush:js;">
+					<style>
+						
+						/* 写进页面的样式 */
+						.BMap_button{
+							width: 30px;
+							height: 30px;
+							.BMap_smcbg{
+								display:none!important;
+							}
+						}
+						.BMap_stdMpZoom{
+							height:70px!important;
+						}
+						.BMap_stdMpZoom .BMap_button{
+							background-color: rgba(26,106,255,0.5);
+							background-size: 60%;
+							background-position: center!important;
+							background-image: url(img/map_zoomin.svg)!important;
+						}
+						.BMap_stdMpZoom .BMap_stdMpZoomOut{
+							margin-top: 10px;
+							background-image: url(img/map_zoomout.svg)!important;
+						}
+						.BMap_stdMpZoom .BMap_button:hover{
+							background-color: rgba(26,106,255,0.8);
+						}
+						.BMap_stdMpZoom .BMap_button:active{
+							background-color: rgba(26,106,255,1);
+						}
+					</style>
+						<!-- 放大缩小 -->
+						<div class="map_enlarge_whole"></div>
+						<!-- 图例 -->
+						<ul class="map-selector">
+							<li class='selected' index='1'>
+								<div class="legend-sm">
+									<img src="img/legend2.svg">
+								</div>
+								<p>试点小区</p>
+							</li>
+							<li class='selected' index='2'>
+								<div class="legend-sm">
+									<img src="img/legend1.svg">
+								</div>
+								<p>餐厅</p>
+							</li>
+						</ul>
+						<!-- 地图 -->
+						<div id='allmap'>
+							
+						</div>
+				</pre>
+			</div>
+			<div class="title-line" id="js">
+				<h4>js代码</h4>
+				<button>复制</button>
+			</div>
+			<div class='code-js'>
+				<pre class="brush:js;">
+					<!-- <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=6zT0F4TO4nog7pnIUa7k5vjupxleQKqh"></script>
+					// 地图图标大小调整
+						$('.legend img').each(function(){
+							var w=$(this).prop('offsetWidth');
+							var h=$(this).prop('offsetHeight');
+							if(w>h){
+								$(this).css('width','30px');
+								$(this).css('height','auto');
+							}else{
+								$(this).css('height','30px');
+								$(this).css('width','auto');
+							}
+						});
+						// 地图图例点击筛选
+						$('.map-selector li').click(function(){
+							var index=$(this).attr('index');
+							if($(this).hasClass('selected')==true){
+								$(this).removeClass('selected');
+								$('.legend').each(function(){
+									if($(this).parents('.map-selector').length>0){
+										
+									}else{
+										if($(this).attr('index')==('map'+index)){
+											$(this).addClass('hidden');
+										}
+									}
+								});
+								$('.legend-dot').each(function(){
+									if($(this).parents('.map-selector').length>0){
+									}else{
+										if($(this).attr('index')==('map'+index)){
+											$(this).addClass('hidden');
+										}
+									}
+								});
+							}else{
+								$(this).addClass('selected');
+								$('.legend').each(function(){
+									if($(this).attr('index')==('map'+index)){
+										$(this).removeClass('hidden');
+									}
+								});
+								$('.legend-dot').each(function(){
+									if($(this).attr('index')==('map'+index)){
+										$(this).removeClass('hidden');
+									};
+								});
+							}
+						})
+						<!-- 放大缩小 -->
+						<!-- var orgH=$('.sample').prop('offsetHeight');
+						var orgW=$('.sample').prop('offsetWidth');
+						$('.map_enlarge_whole').click(function(){
+							// 操作最外层的盒子
+							if($('.sample').hasClass('map-enlarged-whole')==false){
+								$('.sample').css('position','absolute').css('width','100%').css('height','100%').css('z-index','999').css('top','0').css('left','0').css('transition','0.5s');
+								$('.sample').addClass('map-enlarged-whole');
+							}else{
+								$('.sample').css('position','relative').css('width',orgW+'px').css('height',orgH+'px');
+								$('.sample').removeClass('map-enlarged-whole');
+							}
+							
+						});
+					</script> -->
+					
+					<!-- <script type="text/javascript">
+					// 	// 百度地图API功能
+					// 	var map = new BMap.Map("allmap"); // 创建Map实例
+					// 	map.centerAndZoom(new BMap.Point(116.404, 39.915), 11); // 初始化地图,设置中心点坐标和地图级别
+					// 	//添加地图类型控件
+					// 	var top_right_navigation = new BMap.NavigationControl({anchor: BMAP_ANCHOR_TOP_RIGHT, type: BMAP_NAVIGATION_CONTROL_SMALL});
+					// 	map.addControl(new BMap.MapTypeControl({
+					// 		mapTypes: [
+					// 			BMAP_NORMAL_MAP,
+					// 			BMAP_HYBRID_MAP
+					// 		]
+					// 	}));
+					// 	
+					// 	map.setCurrentCity("北京"); // 设置地图显示的城市 此项是必须设置的
+					// 	map.enableScrollWheelZoom(true); //开启鼠标滚轮缩放
+					// 	var mapStyle = {
+					// 		features: ["point", "road", "building", "water", "land"], //隐藏地图上的poi
+					// 		style: "midnight"
+							// http://lbsyun.baidu.com/custom/list.htm
+							// normal 默认地图样式  
+							// light 清新蓝风格
+							// dark 黑夜风格
+							// redalert 大红风格
+							// googlelite 精简风格
+							// grassgreen 自然绿风格
+							// midnight 午夜蓝风格
+							// pink 浪漫粉风格
+							// grayscale 高端灰
+							// hardedge 强边界风格
+						}
+						
+						<!-- map.setMapStyle(mapStyle);
+						map.addControl(top_right_navigation);
+					</script> --> 
+				</pre>
+			</div>
+		</div>
+	</body>
+	
+</html>

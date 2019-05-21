@@ -1,0 +1,105 @@
+// 滑动条
+.slider{
+	width:180px;
+}
+.layui-slider{
+	height: 10px;
+	width: 120px;
+	border-radius:999px;
+	border:#ff5050 1px solid;
+	background-color: rgba(255,80,80,0.3);
+}
+.layui-slider-bar{
+	background-color: rgba(255,80,80,1)!important;
+}
+.layui-slider-wrap-btn{
+	width: 16px;
+	height: 16px;
+	border:none!important;
+}
+.layui-slider-wrap{
+	top:-18px;
+}
+
+.layui-slider-input-btn{
+	left:30px;
+}
+.layui-input{
+	padding-left:0;
+	text-align: center;
+	background: none;
+	color:#ffffff;
+	font-size: 12px;
+}
+.layui-slider-input{
+	width: 40px;
+	height: 18px;
+	top:-5px;
+	background-color: #1e5290;
+	border:1px solid rgba(255,255,255,0.4);
+	border-radius:0px;
+}
+.slider-outbox{
+	label{
+		display: block;
+		width: 15px;
+		height: 16px;
+		border-radius:50%;
+		background-color: #ff5050;
+		margin-right: 5px;
+		position:relative;
+		top:-2px;
+	}
+	span{
+		display:block;
+		color:#ffffff;
+		font-size:16px;
+		text-indent:0;
+		margin-right: 5px;
+		line-height:10px;
+	}
+}
+.slider-outbox>*{
+	float:left;
+}
+
+// 绿色
+.slide-green{
+	.layui-slider{
+		background-color: rgba(80,225,128,0.3);
+		border-color:rgba(80,225,128,1);
+	}
+	.layui-slider-bar{
+		background-color: rgba(80,225,128,1)!important;
+	}
+	label{
+		background-color: rgba(80,225,128,1);
+	}
+}
+
+// 蓝色
+.slide-blue{
+	.layui-slider{
+		background-color: rgba(80,213,255,0.3);
+		border-color:rgba(80,213,255,1);
+	}
+	.layui-slider-bar{
+		background-color: rgba(80,213,255,1)!important;
+	}
+	label{
+		background-color: rgba(80,213,255,1);
+	}
+}
+// 黄色
+.slide-yellow{
+	.layui-slider{
+		background-color: rgba(255,182,80,0.3);
+		border-color:rgba(255,182,80,1);
+	}
+	.layui-slider-bar{
+		background-color: rgba(255,182,80,1)!important;
+	}
+	label{
+		background-color: rgba(255,182,80,1);
+	}
+}

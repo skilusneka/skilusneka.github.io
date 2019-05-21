@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>悬浮窗</title>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="SyntaxHighlighter/shCore.min.js"></script>
+		<script type="text/javascript" src="SyntaxHighlighter/shBrushJScript.min.js"></script>
+		<link type="text/css" rel="stylesheet" href="SyntaxHighlighter/shCoreDefault.min.css" />
+		<script type="text/javascript">
+			SyntaxHighlighter.all();
+		</script>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="layui/css/layui.css"/>
+		<link rel="stylesheet" type="text/css" href="scss/style.css"/>
+		<script src="layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			.sample{
+				background-color: #333333;
+				padding:40px;
+			}
+			.button_list{
+				height: 40px;
+				line-height: 40px;
+				background-color: #01FFE4;
+				border-radius: 5px;
+				font-size: 14px;
+				margin-left: 10px;
+				padding: 0 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="content_inner">
+		
+			<h3 id='top'>悬浮窗</h3>
+			<div class="sample">
+				<button class="layui-btn layui-btn-normal" onclick="cliSm($(this));">点击提示</button>
+			</div>
+			<div class="title-line" id="description">
+					<h4>说明</h4>
+					<a class="button_list" href="layui.zip" download="layui.zip">下载layui压缩包</a> 
+					<a class="button_list" href="js/jquery.min.js" download="jquery.min.js">下载jquery.js文件</a>
+					<a class="button_list" href="scss/form.scss" download="form.scss">下载form.scss文件</a> 
+			 
+				</div>
+				<div class='code-html'>
+						<pre class="brush:js;">
+							1.某些文件需要单独引入
+							2.需要引入form.scss
+						</pre>
+				</div>
+			<div class="title-line" id="html">
+				<h4>html代码</h4>
+				<button>复制</button>
+			</div>
+			<div class='code-html'>
+				<pre class="brush:js;">
+						<button class="layui-btn layui-btn-normal" onclick="cliSm($(this));">点击提示</button>
+						 
+				</pre>
+			</div>
+			<div class="title-line" id="js">
+				<h4>js代码</h4>
+				<button>复制</button>
+			</div>
+			<div class='code-js'>
+				<pre class="brush:js;">
+						<link rel="stylesheet" type="text/css" href="layui/css/layui.css"/>
+						<script src="layui/layui.js" type="text/javascript" charset="utf-8"></script>
+						<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+						var cliSm=function(el){
+			
+							layui.use('layer', function(){
+							  var layer = layui.layer;
+								layer.tips('提示信息', el, {
+								  tips: [2, '#4B96E8'],
+								  time: 3000
+								});
+							});
+						}
+				</pre>
+			</div>
+		</div>
+	</body>
+	<script>
+		var cliSm=function(el){
+			
+			layui.use('layer', function(){
+			  var layer = layui.layer;
+				layer.tips('提示信息', el, {
+				  tips: [2, '#4B96E8'],
+				  time: 3000
+				});
+			});
+		}
+	</script>
+</html>

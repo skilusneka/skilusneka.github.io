@@ -1,0 +1,137 @@
+// 元素展板
+// 首页朴素板式
+.board-index{
+	background-color: rgba(26,106,255,0.3);
+}
+// 首页特殊板式
+.board-index-complex{
+	background-size: 100% 100%;
+	background-image: url(img/board-index-complex.png);
+}
+// 首页四大板块
+.board-index-four{
+	// 下面一层
+	background-color: rgba(26,106,255,0.3);
+	overflow: hidden;
+	.innerbox{
+		// 上面一层
+		background-color: rgba(53,159,255,0.3);
+		width:calc(100% - 10px);
+		height:calc(100% - 10px);
+		margin-top:5px;
+		margin-left:5px;
+	}
+}
+// 综合分析
+.board-analysis{
+	// 下面一层
+	background-color:  rgba(26,106,255,0.3);
+	overflow: hidden;
+	.innerbox{
+		// 上面一层
+		background-color: rgba(53,159,255,0.3);
+		width:calc(100% - 10px);
+		height:calc(100% - 10px);
+		margin-top:5px;
+		margin-left:5px;
+		border:1px solid #1A6AFF;
+	}
+}
+// 可折叠元素
+// 向左折叠
+.shrink-left:hover .shrink-close{
+	opacity: 0.3;
+}
+.shrink-left{
+	// 折叠关闭
+	transition: 0.5s;
+	position:relative;
+	.shrink-close,.shrink-open{
+		width:10px;
+		z-index:4;
+		position:absolute;
+		right:5px;
+		top:5px;
+		cursor:pointer;
+		background-position: center;
+		background-size:8px auto;
+		background-repeat: no-repeat;
+		background-color: #359FFF;
+		opacity: 0;
+		height:calc(100% - 10px);
+		background-image: url(img/pop_cloz_slide.svg);
+	}
+	// 折叠开启
+	.shrink-open{
+		display: none;
+		opacity: 0.6;
+		left:5px;
+		background-image: url(img/pop_open_slide.svg);
+	}
+	// 移入时
+	.shrink-close:hover{
+		opacity: 0.6;
+	}
+	.shrink-open:hover{
+		opacity: 0.8;
+	}
+	.shrink-close:active,.shrink-open:active{
+		opacity: 1;
+	}
+}
+
+// 向右折叠
+.shrink-right:hover .shrink-open{
+	opacity: 0.3;
+}
+.shrink-right{
+	// 折叠关闭
+	transition: 0.5s;
+	position:relative;
+	float:right;
+	.shrink-close,.shrink-open{
+		display: none;
+		z-index:4;
+		position:absolute;
+		right:5px;
+		top:5px;
+		cursor:pointer;
+		background-position: center;
+		background-size:8px auto;
+		background-repeat: no-repeat;
+		background-color: #359FFF;
+		opacity: 0.3;
+		width:10px;
+		height:calc(100% - 10px);
+		background-image: url(img/pop_cloz_slide.svg);
+	}
+	// 折叠开启
+	.shrink-close{
+		display: block;
+		opacity: 0;
+		left:5px;
+		background-image: url(img/pop_open_slide.svg);
+	}
+	// 移入时
+	.shrink-close:hover{
+		opacity: 0.6;
+	}
+	.shrink-open:hover{
+		opacity: 0.8;
+	}
+	.shrink-close:active,.shrink-open:active{
+		opacity: 1;
+	}
+}
+// 收缩后的展板
+.shrink-done{
+	width:15px!important;
+	background-color: rgba(0,0,0,0)!important;
+	background-image: none!important;
+	.shrink-close{
+		display: none;
+	}
+	.shrink-open{
+		display: block;
+	}
+}

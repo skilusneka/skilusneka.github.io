@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>配色</title>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="SyntaxHighlighter/shCore.min.js"></script>
+		<script type="text/javascript" src="SyntaxHighlighter/shBrushJScript.min.js"></script>
+		<link type="text/css" rel="stylesheet" href="SyntaxHighlighter/shCoreDefault.min.css" />
+		<script type="text/javascript">
+			SyntaxHighlighter.all();
+		</script>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="scss/style.css"/>
+		<style>
+			.sample{
+				background-color: #333333;
+			}
+			.sample li{
+				height:40px;
+				width:calc(100% - 40px);
+				margin-left: 10px;
+				padding: 10px;
+				box-sizing: content-box;
+			}
+			.sample li:hover{
+				background-color: #666666;
+			}
+			.sample li div{
+				height: 40px;
+				width: 40px;
+				float:left;
+			}
+			.sample li p{
+				line-height:20px;
+				float:left;
+				width:calc(100% - 40px);
+				color:#ffffff;
+				font-size: 14px;
+			}
+			.seablue{
+				background-color: #1a6aff;
+			}
+			.skyblue{
+				background-color: #359FFF;
+			}
+			.greenblue{
+				background-color: #46EBE3;
+			}
+			.white{
+				background-color: #ffffff;
+			}
+			.yellow{
+				background-color: #fff87e;
+			}
+			.red{
+				background-color: #ff4948;
+			}
+			.f20{
+				background-color: #46EBE3;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="content_inner">
+			<h3 id='top'>配色</h3>
+			<div class="sample">
+				<ul>
+					<li>
+						<div class="seablue"></div>
+						<p>#1a6aff</p>
+						<p>用于主要图标以及按钮</p>
+					</li>
+					<li>
+						<div class="skyblue"></div>
+						<p>#359FFF</p>
+						<p>用于主要图标以及按钮</p>
+					</li>
+					<li>
+						<div class="greenblue"></div>
+						<p>#46EBE3</p>
+						<p>适用于弹框颜色,单选复选框颜色等等</p>
+					</li>
+					<li>
+						<div class="white"></div>
+						<p>#ffffff</p>
+						<p>(一般文字用色)用于大多数文字信息 内页标题信息</p>
+					</li>
+					<li>
+						<div class="yellow"></div>
+						<p>#fff87e</p>
+						<p>用于少量较为需要突出的数据显示</p>
+					</li>
+					<li>
+						<div class="red"></div>
+						<p>#ff4948</p>
+						<p>用于极少重点突出的数据展示</p>
+					</li>
+				</ul>
+			</div>
+			<div class="title-line" id="description">
+					<h4>说明</h4>
+				</div>
+				<div class='code-html'>
+						<pre class="brush:js;">
+							//在所写div上定义对应class类名，如下:
+							<div class="f20">
+								五福颜色规范
+							</div>
+							 //需要在对应scss文件里面写
+								@import ("./color.scss");
+								.f20{
+									background-color:$greenblue;
+								}
+							 
+						</pre>
+				</div>
+				<div class="title-line" id="description">
+						<h4>说明效果</h4>
+				</div>
+				<div class='sample'>
+						<div class="f20">
+								五福颜色规范
+						</div>
+				</div>
+			<div class="title-line" id="html">
+				<h4>scss代码</h4>
+				<button>复制</button>
+			</div>
+			<div class='code-html'>
+				<pre class="brush:js;">
+					// 颜色
+					// 主色调用于特别提示的标题以及按钮
+					$seablue:#1a6aff;
+					// 用于主要图标以及按钮
+					$skyblue:#359FFF;
+					// 适用于弹框颜色,单选复选框颜色等等
+					$greenblue:#46EBE3;
+					// (一般文字用色)用于大多数文字信息 内页标题信息
+					$white:#ffffff;
+					// 用于少量较为需要突出的数据显示
+					$yellow:#fff87e;
+					// 用于极少重点突出的数据展示
+					$red:#ff4948;
+				</pre>
+			</div>
+			<div class="title-line" id="js">
+				<h4>js代码</h4>
+				<button>复制</button>
+			</div>
+			<div class='code-js'>
+				<pre class="brush:js;">无</pre>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,71 @@
+// 选项卡
+
+.layui-tab{
+	text-indent: 15px;
+	width:auto;
+	height:auto;
+	overflow: hidden;
+	.layui-tab-title{
+		border:none;
+		height:auto!important;
+		overflow:hidden;
+	}
+	li{
+		overflow: hidden;
+		width: auto;
+		height: auto;
+		opacity: 0.4;
+		float:left;
+		margin-right: 10px;
+		span{
+			cursor:pointer;
+			padding:5px 0;
+			display: inline-block;
+			color:#ffffff;
+			float:left;
+			width:auto;
+			text-align:left;
+			background-color: #0067FF;
+		}
+		span:last-child{
+			margin-right: 0;
+			padding-right:15px;
+			border-top-right-radius:999px;
+			border-bottom-right-radius:999px;
+		}
+		span:first-child{
+			border-top-left-radius:999px;
+			border-bottom-left-radius:999px;
+		}
+	}
+	li:hover,.layui-this{
+		opacity: 1;
+	}
+	.layui-this:after{
+			display: none;
+	}
+}
+
+// 标题类选项卡
+.tab-title{
+	text-indent: 15px;
+	display: inline-block;
+	padding:5px 15px 5px 0;
+	width:auto;
+	border-radius:999px;
+	background-color: #0067FF;
+	font-size:16px;
+	color:#ffffff;
+	line-height:24px;
+	cursor:pointer;
+}
+.layui-layer-tips{
+	.layui-layer-TipsG{
+		transform: rotate(-90deg);
+		margin-left: -6px;
+	}
+	.layui-layer-content{
+		min-height:0px;
+		background-color: rgba(75,150,232,1)!important;
+	}
+}

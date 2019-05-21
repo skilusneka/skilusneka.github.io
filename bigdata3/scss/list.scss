@@ -1,0 +1,32 @@
+// 列表
+.list{
+	*{
+		height: 26px;
+		margin-bottom: 6px;
+		font-size: 14px;
+		color:#ffffff;
+		text-align: left;
+	}
+	dd{
+		overflow: hidden;
+		background-color: #0067FF;
+		*{
+			display:block;
+			float:left;
+			line-height:26px;
+		}
+	}
+	dt{
+		overflow: hidden;
+		background-color: rgba(0,103,255,0.5);
+		*{
+			display:block;
+			float:left;
+			line-height:26px;
+			color:rgba(255,255,255,0.9)
+		}
+	}
+	dt:nth-child(odd){
+		background-color: rgba(0,103,255,0.8);
+	}
+}

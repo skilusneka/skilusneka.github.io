@@ -1,0 +1,32 @@
+// 按钮
+.layui-btn{
+	text-indent:0;
+	color:#ffffff;
+	background-color: #1A6AFF;
+	font-weight: bold;
+	display:inline-block;
+}
+.layui-btn-normal{
+	text-indent:0;
+	color:#ffffff;
+	background-color: #1F9FFF;
+}
+.layui-btn-warm{
+	text-indent:0;
+	color:#ffffff;
+	background-color: #FFB802;
+}
+.layui-btn-danger{
+	text-indent:0;
+	color:#ffffff;
+	background-color: #FF5722;
+}
+.layui-btn-disabled,.layui-btn-disabled:hover{
+	text-indent:0;
+	color:#ffffff;
+	background-color: #C9C9C9;
+	border-color:#e6e6e6;
+}
+.layui-btn:hover{
+	color:#ffffff;
+}

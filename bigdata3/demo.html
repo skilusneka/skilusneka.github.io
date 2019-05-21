@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="common.css"/>
+	</head>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			
+		}
+		div{
+			box-sizing: border-box;
+			float:right;
+			height: 400px;
+			background-color: #000000;
+			margin-right: 10px;
+			width:calc(100% - 230px);
+		}
+		div:first-child{
+			float:left;
+			width: 200px;
+			height: 800px;
+			margin-left: 10px;
+		}
+		p{
+			width:100px;
+			color:white;
+		}
+	</style>
+	<body>
+		<div>
+			<p class='elli'>彝族主要分布在云南、四川和贵州三省。
+
+The Yi nationality is distributed mainly over Yunnan, Sichuan and Guizhou provinces. 
+
+《汉英大词典》
+
+2
+有些种类的植物分布得很广。
+
+Some types of plants are widely distributed. 
+
+《汉英大词典》
+
+3
+对银河系的研究表明，遥远星系在太空中的分布并不像理论所预言的那样均匀。
+
+Galactic surveys show that distant galaxies are not as evenly distributed in space as theory predicts. 
+
+《柯林斯高阶英汉双解学习词典》
+
+4
+他们现在已经远离了最远的零星分布的郊区了。
+
+They were beyond the last straggling suburbs now. 
+
+《柯林斯高阶英汉双解学习词典》
+
+5
+可以把钱汇给分布在世界各地的22,000名筹款代理人中的任何一位。
+
+Money can be sent to any one of 22,000 agents worldwide for collection.</p>
+		</div>
+		<div></div>
+		<div></div>
+	</body>
+	
+	
+	<div class="div_119">
+    <a class="a_1">点我全屏</a>
+    <a class="a_2">退出全屏</a>
+</div>
+ 
+// 全屏
+function launchFullScreen(element) {
+    if (element.requestFullScreen) {
+        element.requestFullScreen();
+    } else if (element.mozRequestFullScreen) {
+        element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullScreen) {
+        element.webkitRequestFullScreen();
+    }
+}
+// 退出全屏
+function exitFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+    }
+}
+$(".div_119 .a_1").bind("click", function() {
+    launchFullScreen(document.documentElement);
+});
+$(".div_119 .a_2").bind("click", function() {
+    exitFullscreen(document.documentElement);
+});
+</html>

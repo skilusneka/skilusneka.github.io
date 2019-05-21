@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>图例与组件</title>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="SyntaxHighlighter/shCore.min.js"></script>
+		<script type="text/javascript" src="SyntaxHighlighter/shBrushJScript.min.js"></script>
+		<link type="text/css" rel="stylesheet" href="SyntaxHighlighter/shCoreDefault.min.css" />
+		<script type="text/javascript">
+			SyntaxHighlighter.all();
+		</script>
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="layui/css/layui.css" />
+		<link rel="stylesheet" type="text/css" href="scss/style.css" />
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=6zT0F4TO4nog7pnIUa7k5vjupxleQKqh"></script>
+		<script src="layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			.sample{
+				position:relative;
+				height: 800px;
+			}
+			#allmap{
+				width: 100%;
+				height: 100%;
+				position:absolute;
+			}
+			
+			.button_list {
+				height: 40px;
+				line-height: 40px;
+				background-color: #01FFE4;
+				border-radius: 5px;
+				font-size: 14px;
+				margin-left: 10px;
+				padding: 0 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="content_inner">
+
+			<h3 id='top'>图例与组件</h3>
+			<div class="sample">
+				<div id='allmap'>
+
+				</div>
+			</div>
+			<div class="title-line" id="html">
+				<h4>html代码</h4>
+				<button>复制</button>
+			</div>
+			<div class='code-html'>
+				<pre class="brush:js;">
+						<div id='allmap'>
+							
+						</div>
+				</pre>
+			</div>
+			<div class="title-line" id="js">
+				<h4>js代码</h4>
+				<button>复制</button>
+			</div>
+			<div class='code-js'>
+				<pre class="brush:js;">
+						// 百度地图API功能
+						var map = new BMap.Map("allmap"); // 创建Map实例
+						map.centerAndZoom(new BMap.Point(120.592987, 31.303812), 10); // 初始化地图,设置中心点坐标和地图级别
+						//添加地图类型控件
+						map.addControl(new BMap.MapTypeControl({
+							mapTypes: [
+								BMAP_NORMAL_MAP,
+								BMAP_HYBRID_MAP
+							]
+						}));
+						map.setCurrentCity("苏州市"); // 设置地图显示的城市 此项是必须设置的
+						map.enableScrollWheelZoom(true); //开启鼠标滚轮缩放
+						var mapStyle = {
+							features: ["point", "road", "building", "water", "land"], //隐藏地图上的poi
+							style: "midnight"
+						}
+						map.setMapStyle(mapStyle);
+					
+						var areaColor = ['#0DA1FF', '#0CCDE8', '#1AFFDC', '#0CE889', '#0DFF52', '#FFFC0D', '#FF990D', '#FF4A00', '#FF0D14',
+							'#FA00FF'
+						];
+						var areaName = ["姑苏区", "虎丘区", "相城区", "吴中区", "苏州市工业园区", "吴江区", "常熟市", "昆山市", "张家港市", "太仓市"]
+						var plyArr=[];
+						function getBoundary(aC,aN,id) {
+							var bdary = new BMap.Boundary();
+							bdary.get(aN, function(rs) { //获取行政区域
+								// map.clearOverlays(); //清除地图覆盖物       
+								var count = rs.boundaries.length; //行政区域的点有多少个
+								if (count === 0) {
+									alert('未能获取当前输入行政区域');
+									return;
+								}
+								var pointArray = [];
+								for (var i = 0; i < count; i++) {
+									var ply = new BMap.Polygon(rs.boundaries[i], {
+										fillColor: aC,
+										strokeColor:'rgba(0,0,0,0)',
+										strokeOpacity: '2'
+									}); //建立多边形覆盖物
+									
+									map.addOverlay(ply); //添加覆盖物
+									ply.id=id;
+									// 绑定点击事件
+									ply.addEventListener("click", function(e) {
+										// 清除覆盖物填充色和描边
+										$(plyArr).each(function(){
+											$(this).prop('V').attributes.stroke.value="rgba(0,0,0,0)";
+											$(this).prop('V').attributes.fill.value="rgba(0,0,0,0)";
+										})
+										// 当前区块描边
+										$(this).prop('V').attributes.stroke.value="#ffffff";
+										map.setViewport(pointArray); //调整视野  
+										map.setZoom(13)
+									})
+									plyArr.push(ply);
+									pointArray = pointArray.concat(ply.getPath());
+								}
+								
+							});
+						}
+						var areaCounter = 0;
+						while (areaCounter < areaColor.length) {
+							getBoundary(areaColor[areaCounter], areaName[areaCounter],areaCounter)
+							areaCounter++;
+						}
+						var optsArray = [];
+						var labelArray = [];
+						addlabel();
+						function addlabel() {
+							var areapoints = [
+								[120.604572, 31.319155, "姑苏区"],
+								[120.344606, 31.344818, "高新区"],
+								[120.632064, 31.443949, "相城区"],
+								[120.31471, 31.149703, "吴中区"],
+								[120.758545, 31.341364, "工业园区"],
+								[120.643562, 31.034913, "吴江区"],
+								[120.845932, 31.662548, "常熟市"],
+								[120.974713, 31.35518, "昆山市"],
+								[120.632064, 31.908098, "张家港市"],
+								[121.144888, 31.560206, "太仓市"]
+							];
+							// 文字位置数据
+							for (var i = 0; i < areapoints.length; i++) {
+								optsArray.push({});
+								optsArray[i].position = new BMap.Point(areapoints[i][0]-0.02,areapoints[i][1]+0.03);
+								labelArray[i] = new BMap.Label(areapoints[i][2], optsArray[i]);
+								// 文字样式
+								labelArray[i].setStyle({
+									color: "white",
+									fontSize: "14px",
+									fontFamily: "微软雅黑",
+									background:'none',
+									border:'none'
+								});
+								map.addOverlay(labelArray[i]);
+							}
+						}
+				</pre>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		// 百度地图API功能
+		var map = new BMap.Map("allmap"); // 创建Map实例
+		map.centerAndZoom(new BMap.Point(120.592987, 31.303812), 10); // 初始化地图,设置中心点坐标和地图级别
+		//添加地图类型控件
+		map.addControl(new BMap.MapTypeControl({
+			mapTypes: [
+				BMAP_NORMAL_MAP,
+				BMAP_HYBRID_MAP
+			]
+		}));
+		map.setCurrentCity("苏州市"); // 设置地图显示的城市 此项是必须设置的
+		map.enableScrollWheelZoom(true); //开启鼠标滚轮缩放
+		var mapStyle = {
+			features: ["point", "road", "building", "water", "land"], //隐藏地图上的poi
+			style: "midnight"
+		}
+		map.setMapStyle(mapStyle);
+	
+		var areaColor = ['#0DA1FF', '#0CCDE8', '#1AFFDC', '#0CE889', '#0DFF52', '#FFFC0D', '#FF990D', '#FF4A00', '#FF0D14',
+			'#FA00FF'
+		];
+		var areaName = ["姑苏区", "虎丘区", "相城区", "吴中区", "苏州市工业园区", "吴江区", "常熟市", "昆山市", "张家港市", "太仓市"]
+		var plyArr=[];
+		function getBoundary(aC,aN,id) {
+			var bdary = new BMap.Boundary();
+			bdary.get(aN, function(rs) { //获取行政区域
+				// map.clearOverlays(); //清除地图覆盖物       
+				var count = rs.boundaries.length; //行政区域的点有多少个
+				if (count === 0) {
+					alert('未能获取当前输入行政区域');
+					return;
+				}
+				var pointArray = [];
+				for (var i = 0; i < count; i++) {
+					var ply = new BMap.Polygon(rs.boundaries[i], {
+						fillColor: aC,
+						strokeColor:'rgba(0,0,0,0)',
+						strokeOpacity: '2'
+					}); //建立多边形覆盖物
+					
+					map.addOverlay(ply); //添加覆盖物
+					ply.id=id;
+					// 绑定点击事件
+					ply.addEventListener("click", function(e) {
+						// 清除覆盖物填充色和描边
+						$(plyArr).each(function(){
+							$(this).prop('V').attributes.stroke.value="rgba(0,0,0,0)";
+							$(this).prop('V').attributes.fill.value="rgba(0,0,0,0)";
+						})
+						// 当前区块描边
+						$(this).prop('V').attributes.stroke.value="#ffffff";
+						map.setViewport(pointArray); //调整视野  
+						map.setZoom(13);
+						// 清除标签内的文字
+						$(labelArray).each(function(){
+							console.log($(this))
+							$(this).prop('V').innerText='';
+						})
+					})
+					plyArr.push(ply);
+					pointArray = pointArray.concat(ply.getPath());
+				}
+				
+			});
+		}
+		var areaCounter = 0;
+		while (areaCounter < areaColor.length) {
+			getBoundary(areaColor[areaCounter], areaName[areaCounter],areaCounter)
+			areaCounter++;
+		}
+		var optsArray = [];
+		var labelArray = [];
+		addlabel();
+		function addlabel() {
+			var areapoints = [
+				[120.604572, 31.319155, "姑苏区"],
+				[120.344606, 31.344818, "高新区"],
+				[120.632064, 31.443949, "相城区"],
+				[120.31471, 31.149703, "吴中区"],
+				[120.758545, 31.341364, "工业园区"],
+				[120.643562, 31.034913, "吴江区"],
+				[120.845932, 31.662548, "常熟市"],
+				[120.974713, 31.35518, "昆山市"],
+				[120.632064, 31.908098, "张家港市"],
+				[121.144888, 31.560206, "太仓市"]
+			];
+			// 文字位置数据
+			for (var i = 0; i < areapoints.length; i++) {
+				optsArray.push({});
+				optsArray[i].position = new BMap.Point(areapoints[i][0]-0.1,areapoints[i][1]+0.03);
+				labelArray[i] = new BMap.Label(areapoints[i][2], optsArray[i]);
+				// 文字样式
+				labelArray[i].setStyle({
+					color: "white",
+					fontSize: "14px",
+					fontFamily: "微软雅黑",
+					background:'none',
+					border:'none'
+				});
+				map.addOverlay(labelArray[i]);
+			}
+		}
+	</script>
+</html>

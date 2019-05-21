@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="4px" viewBox="0 0 18 4" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>Path</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="地图-图例+放大缩小" transform="translate(-726.000000, -260.000000)" fill="#FFFFFF">
+            <g id="放大缩小" transform="translate(720.000000, 207.000000)">
+                <g id="Group-12-Copy-3" transform="translate(0.000000, 40.000000)">
+                    <g id="加" transform="translate(6.000000, 13.000000)">
+                        <path d="M10.1183618,0.458770712 L7.48275876,0.458770712 L1.31780159,0.458770712 C0.589999437,0.458770748 0,1.1257266 0,1.9484594 C3.18132401e-08,2.77119221 0.589999437,3.43814809 1.31780153,3.43814809 L7.48275871,3.43814809 L10.1183618,3.43814832 L16.2833189,3.43814832 C17.011121,3.43814835 17.6011204,2.77119243 17.6011204,1.94845963 C17.6011205,1.12572682 17.011121,0.458770937 16.2833189,0.458770937 L10.1183618,0.458770712 Z" id="Path"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

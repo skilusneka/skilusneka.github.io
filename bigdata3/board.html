@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>元素展板</title>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="SyntaxHighlighter/shCore.min.js"></script>
+		<script type="text/javascript" src="SyntaxHighlighter/shBrushJScript.min.js"></script>
+		<link type="text/css" rel="stylesheet" href="SyntaxHighlighter/shCoreDefault.min.css" />
+		<script type="text/javascript">
+			SyntaxHighlighter.all();
+		</script>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="scss/style.css"/>
+		<style>
+			.sample{
+				background-color: #333333;
+			}
+			.samplea{
+				background-color: #333333;
+				margin:20px;
+			}
+			.sample ul{
+				overflow: hidden;
+			}
+			.sample li{
+				margin:20px;
+				width:calc(50% - 40px);
+				float:left;
+				overflow: hidden;
+				position:relative;
+			}
+			.sample h4{
+				color:#ffffff;
+			}
+			.sample div{
+				width: 400px;
+				height: 200px;
+			}
+			.board-index{
+									width:200px;
+									height:200px;
+			}
+			.board-index-complex{
+				width:200px;
+				height:200px;
+			}
+			.button_list{
+				height: 40px;
+				line-height: 40px;
+				background-color: #01FFE4;
+				border-radius: 5px;
+				font-size: 14px;
+				margin-left: 10px;
+				padding: 0 5px;
+				color:#333;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="content_inner">
+		
+			<h3 id='top'>元素展板</h3>
+			<div class="sample">
+				<ul>
+					<li>
+						<h4>首页朴素样式</h4>
+						<div class="board-index"></div>
+					</li>
+					<li>
+						<h4>首页特殊样式</h4>
+						<div class="board-index-complex"></div>
+					</li>
+					<li>
+						<h4>首页朴素样式-向左收缩</h4>
+						<div class="board-index shrink-left">
+							<div class="shrink-open"></div>
+							<div class="shrink-close"></div>
+						</div>
+					</li>
+					<li>
+						<h4>首页特殊样式-向右收缩</h4>
+						<div class="board-index-complex shrink-right">
+							<div class="shrink-open"></div>
+							<div class="shrink-close"></div>
+						</div>
+					</li>
+					<li>
+						<h4>首页四大板块</h4>
+						<div class="board-index-four"><div class="innerbox"></div></div>
+					</li>
+					<li>
+						<h4>综合分析</h4>
+						<div class="board-analysis"><div class="innerbox"></div></div>
+					</li>
+				</ul>
+				
+			</div>
+			<div class="title-line" id="description">
+					<h4>说明</h4>
+					<a class="button_list" href="js/jquery.min.js" download="jquery.min.js">下载jquery文件</a> 
+					<a class="button_list" href="img/board-index-complex.png" download="board-index-complex.png">首页特殊样式下载链接</a> 
+					<a class="button_list" href="img/pop_cloz_slide.svg" download="pop_cloz_slide.svg">首页朴素向左关闭下载链接</a> 
+					<a class="button_list" href="img/pop_open_slide.svg" download="pop_open_slide.svg">首页朴素向右打开下载链接</a> 
+				</div>
+				<div class='code-html'>
+						<pre class="brush:js;">
+							1.在所写div上定义对应class类名,注意默认无宽高度,需要自己给,如下:
+							<style>
+								@import "./board.scss";
+								.board-index{
+									width:200px;
+									height:200px;
+								}
+							</style>
+							2.首页特殊样式背景图片需要单独引入,上面有下载链接
+							3.首页朴素样式-向左收缩向右收缩需要单独引入，上面有下载链接
+
+						</pre>
+				</div>
+				 
+				 
+			<div class="title-line" id="html">
+				<h4>html代码</h4>
+				<button>复制</button>
+			</div>
+			<div class='code-html'>
+				<pre class="brush:js;">
+					<!-- 首页朴素样式 -->
+					<div class="board-index"></div>
+					
+					<!-- 首页特殊样式 -->
+					<div class="board-index-complex"></div>
+					
+					<!-- 首页朴素样式-向左收缩 -->
+					<div class="board-index shrink-left">
+						<div class="shrink-open"></div>
+						<div class="shrink-close"></div>
+					</div>
+					
+					<!-- 首页特殊样式-向右收缩 -->
+					<div class="board-index-complex shrink-right">
+						<div class="shrink-open"></div>
+						<div class="shrink-close"></div>
+					</div>
+					<!-- 首页四大板块 -->
+					<div class="board-index-four"><div class="innerbox"></div></div>
+					
+					<!-- 综合分析 -->
+					<div class="board-analysis"><div class="innerbox"></div></div>
+					
+				</pre>
+			</div>
+			<div class="title-line" id="js">
+				<h4>js代码</h4>
+				<button>复制</button>
+			</div>
+			<div class='code-js'>
+				<pre class="brush:js;">
+					<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+					// 可收缩元素
+					$(' .shrink-close').click(function(){
+						var _this=$(this);
+						windowShrink(_this);
+					});
+					$(' .shrink-open').click(function(){
+						console.log(1)
+						var _this=$(this);
+						windowShrinkReverse(_this);
+					});
+					var windowShrink=function(el){
+						$(el).parents('.shrink-left').addClass('shrink-done');
+						$(el).parents('.shrink-right').addClass('shrink-done');
+					}
+					var windowShrinkReverse=function(el){
+						$(el).parents('.shrink-done').removeClass('shrink-done');
+					}
+				</pre>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		// 可收缩元素
+		$(' .shrink-close').click(function(){
+			var _this=$(this);
+			windowShrink(_this);
+		});
+		$(' .shrink-open').click(function(){
+			console.log(1)
+			var _this=$(this);
+			windowShrinkReverse(_this);
+		});
+		var windowShrink=function(el){
+			$(el).parents('.shrink-left').addClass('shrink-done');
+			$(el).parents('.shrink-right').addClass('shrink-done');
+		}
+		var windowShrinkReverse=function(el){
+			$(el).parents('.shrink-done').removeClass('shrink-done');
+		}
+	</script>
+</html>

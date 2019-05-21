@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>列表</title>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="SyntaxHighlighter/shCore.min.js"></script>
+		<script type="text/javascript" src="SyntaxHighlighter/shBrushJScript.min.js"></script>
+		<link type="text/css" rel="stylesheet" href="SyntaxHighlighter/shCoreDefault.min.css" />
+		<script type="text/javascript">
+			SyntaxHighlighter.all();
+		</script>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="scss/style.css"/>
+		<style>
+			.sample{
+				background-color: #333333;
+				padding:40px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="content_inner">
+		
+			<h3 id='top'>列表 </h3>
+			<div class="sample">
+				<dl class="list" id="list">
+					<dd class="hover active">
+						<p class="w20p">编号</p>
+						<p class="w40p">名称</p>
+						<p class="w40p">属性</p>
+					</dd>
+					 
+				</dl>
+			</div>
+			<div class="title-line" id="html">
+				<h4>html代码</h4>
+				<button>复制</button>
+			</div>
+			<div class='code-html'>
+				<pre class="brush:js;">
+					<dl class="list">
+					<dd class="hover active">
+						<p class="w20p">编号</p>
+						<p class="w40p">名称</p>
+						<p class="w40p">属性</p>
+					</dd>
+					 
+				</dl>
+				</pre>
+			</div>
+			<div class="title-line" id="js">
+				<h4>js代码</h4>
+				<button>复制</button>
+			</div>
+			<div class='code-js'>
+				<pre class="brush:js;">
+					<script src="js/jquery.min.js"></script>
+						for(var i=0;i<10;i++){
+			 
+							$("dl").append("<dt class='hover active'><p class='w20p'>06</p><p class='w40p'>五福</p><p class='w40p'>赞</p></dt>")
+						}
+				</pre>
+			</div>
+		</div>
+		<script>
+			for(var i=0;i<9;i++){
+			 
+				$("#list").append("<dt class='hover active'><p class='w20p'>0"+(i+1)+"</p><p class='w40p'>五福</p><p class='w40p'>赞</p></dt>")
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>滑动条</title>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="SyntaxHighlighter/shCore.min.js"></script>
+		<script type="text/javascript" src="SyntaxHighlighter/shBrushJScript.min.js"></script>
+		<link type="text/css" rel="stylesheet" href="SyntaxHighlighter/shCoreDefault.min.css" />
+		<script type="text/javascript">
+			SyntaxHighlighter.all();
+		</script>
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="layui/css/layui.css">
+		<link rel="stylesheet" type="text/css" href="scss/style.css" />
+		<style>
+			.sample {
+				background-color: #333333;
+				padding: 40px;
+			}
+			.sample li{
+				overflow: hidden;
+				margin-bottom: 10px;
+				padding-top:5px;
+			}
+			.button_list{
+				height: 40px;
+				line-height: 40px;
+				background-color: #01FFE4;
+				border-radius: 5px;
+				font-size: 14px;
+				margin-left: 10px;
+				padding: 0 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="content_inner">
+
+			<h3 id='top'>滑动条</h3>
+			<div class="sample">
+				<ul>
+					<li>
+						<div class="slider-outbox">
+							<label></label>
+							<span>故障站点</span>
+							<div id="slideTest1" class='slider'></div>
+						</div>
+					</li>
+					<li>
+						<div class="slider-outbox slide-green">
+							<label></label>
+							<span>正常站点</span>
+							<div id="slideTest2" class='slider'></div>
+						</div>
+					</li>
+					<li>
+						<div class="slider-outbox slide-blue">
+							<label></label>
+							<span>空桩站点</span>
+							<div id="slideTest3" class='slider'></div>
+						</div>
+					</li>
+					<li>
+						<div class="slider-outbox slide-yellow">
+							<label></label>
+							<span>繁忙站点</span>
+							<div id="slideTest4" class='slider'></div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="title-line" id="description">
+					<h4>说明</h4>
+					<a class="button_list" href="layui.zip" download="layui.js">下载layui.zip压缩包</a> 
+			 
+			 
+				</div>
+				<div class='code-html'>
+						<pre class="brush:js;">
+							1.某些文件需要单独引入
+							2.需要给ul增加样式
+							li{
+								overflow: hidden;
+								margin-bottom: 10px;
+								padding-top:5px;
+							}
+						</pre>
+				</div>
+			<div class="title-line" id="html">
+				<h4>html代码</h4>
+				<button>复制</button>
+			</div>
+			<div class='code-html'>
+				<pre class="brush:js;">
+					<ul>
+						<li>
+							<div class="slider-outbox">
+								<label></label>
+								<span>故障站点</span>
+								<div id="slideTest1" class='slider'></div>
+							</div>
+						</li>
+						<li>
+							<div class="slider-outbox slide-green">
+								<label></label>
+								<span>正常站点</span>
+								<div id="slideTest2" class='slider'></div>
+							</div>
+						</li>
+						<li>
+							<div class="slider-outbox slide-blue">
+								<label></label>
+								<span>空桩站点</span>
+								<div id="slideTest3" class='slider'></div>
+							</div>
+						</li>
+						<li>
+							<div class="slider-outbox slide-yellow">
+								<label></label>
+								<span>繁忙站点</span>
+								<div id="slideTest4" class='slider'></div>
+							</div>
+						</li>
+					</ul>
+				</pre>
+			</div>
+			<div class="title-line" id="js">
+				<h4>js代码</h4>
+				<button>复制</button>
+			</div>
+			<div class='code-js'>
+				<pre class="brush:js;">
+	<script src="layui/layui.js"></script>
+	<link rel="stylesheet" href="layui/css/layui.css">
+	<script type="text/javascript">
+		// 实例化
+		layui.use('slider', function() {
+			var slider = layui.slider;
+
+			//渲染
+			slider.render({
+				elem: '#slideTest1', //绑定元素,
+				input: true
+			});
+		});
+		layui.use('slider', function() {
+			var slider = layui.slider;
+		
+			//渲染
+			slider.render({
+				elem: '#slideTest2', //绑定元素,
+				input: true
+			});
+		});
+		layui.use('slider', function() {
+			var slider = layui.slider;
+		
+			//渲染
+			slider.render({
+				elem: '#slideTest3', //绑定元素,
+				input: true
+			});
+		});
+		layui.use('slider', function() {
+			var slider = layui.slider;
+		
+			//渲染
+			slider.render({
+				elem: '#slideTest4', //绑定元素,
+				input: true
+			});
+		});
+		// 颜色绑定
+	</script>
+				</pre>
+			</div>
+		</div>
+	</body>
+	
+	<script src="layui/layui.js"></script>
+	<script type="text/javascript">
+		// 实例化
+		layui.use('slider', function() {
+			var slider = layui.slider;
+
+			//渲染
+			slider.render({
+				elem: '#slideTest1', //绑定元素,
+				input: true
+			});
+		});
+		layui.use('slider', function() {
+			var slider = layui.slider;
+
+			//渲染
+			slider.render({
+				elem: '#slideTest2', //绑定元素,
+				input: true
+			});
+		});
+		layui.use('slider', function() {
+			var slider = layui.slider;
+
+			//渲染
+			slider.render({
+				elem: '#slideTest3', //绑定元素,
+				input: true
+			});
+		});
+		layui.use('slider', function() {
+			var slider = layui.slider;
+
+			//渲染
+			slider.render({
+				elem: '#slideTest4', //绑定元素,
+				input: true
+			});
+		});
+		// 颜色绑定
+	</script>
+</html>

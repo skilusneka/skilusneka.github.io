@@ -1,0 +1,16 @@
+// 表格
+.layui-table{
+	background:none;
+	*{
+		color:#ffffff;
+		text-indent:8px;
+		border-color:rgba(255,255,255,0.3);
+	}
+}
+.layui-table tbody tr:hover, .layui-table thead tr, .layui-table-click, .layui-table-header, .layui-table-hover, .layui-table-mend, .layui-table-patch, .layui-table-tool, .layui-table-total, .layui-table-total tr, .layui-table[lay-even] tr:nth-child(even){
+	background-color: rgba(31,159,255,0.3);
+	
+}
+.layui-table td, .layui-table th, .layui-table-col-set, .layui-table-fixed-r, .layui-table-grid-down, .layui-table-header, .layui-table-page, .layui-table-tips-main, .layui-table-tool, .layui-table-total, .layui-table-view, .layui-table[lay-skin=line], .layui-table[lay-skin=row]{
+	border-color:rgba(2585,255,255,0.2);
+}

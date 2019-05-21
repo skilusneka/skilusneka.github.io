@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>字体</title>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="SyntaxHighlighter/shCore.min.js"></script>
+		<script type="text/javascript" src="SyntaxHighlighter/shBrushJScript.min.js"></script>
+		<link type="text/css" rel="stylesheet" href="SyntaxHighlighter/shCoreDefault.min.css" />
+		<script type="text/javascript">
+			SyntaxHighlighter.all();
+		</script>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="scss/style.css"/>
+		<style>
+			.sample{
+				background: #333333;
+			}
+			.sample li{
+				overflow: hidden;
+				width:calc(100% - 10px);
+				margin-left: 10px;
+				margin-top:10px;
+				
+			}
+			.sample li:after{
+				content:'';
+				display:block;
+				width:calc(100% - 10px);
+				height:1px;
+				background-color: #eeeeee;
+				margin-top: 40px;
+				
+			}
+			.sample li:last-child:after{
+				display:none;
+			}
+			.sample li:hover{
+				background-color: #666666;
+			}
+			.sample li *{
+				float:right;
+				margin-right:10px;
+				color:#eeeeee;
+				
+			}
+			.sample li p{
+				float:left;
+				color:#ffffff;
+			}
+			.sample li div:nth-child(2){
+				margin-right: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="content_inner">
+			<h3 id='top'>字体</h3>
+			<div class="sample">
+				<ul>
+					<li>
+						<p class='f24'>.f24</p>
+						<div>重要提示的数据</div>
+						<div>font-size:24px</div>
+						<div>font-weight:normal</div>
+					</li>
+					<li>
+						<p class='f20'>.f20</p>
+						<div>用在头部大标题</div>
+						<div>font-size:20px</div>
+						<div>font-weight:normal</div>
+					</li>
+					<li>
+						<p class='f16b'>.f16b</p>
+						<div>用在多数标题</div>
+						<div>font-size:16px</div>
+						<div>font-weight:bold</div>
+					</li>
+					<li>
+						<p class='f16'>.f16</p>
+						<div>用在多数标题及内容</div>
+						<div>font-size:16px</div>
+						<div>font-weight:normal</div>
+					</li>
+					<li>
+						<p class='f16'>.f14</p>
+						<div>用于文字描述以及内容</div>
+						<div>font-size:14px</div>
+						<div>font-weight:normal</div>
+					</li>
+					<li>
+						<p class='f12'>.f12</p>
+						<div>用于图表内容</div>
+						<div>font-size:12px</div>
+						<div>font-weight:normal</div>
+					</li>
+				</ul>
+			</div>
+			<div class="title-line" id="description">
+				<h4>说明</h4>
+			</div>
+			<div class='code-html'>
+					<pre class="brush:js;">
+						//在所写div上定义对应class类名，如下:
+						<div class="f24">
+							五福字体规范
+						</div>
+					</pre>
+			</div>
+			<div class="title-line" id="description">
+					<h4>说明效果</h4>
+			</div>
+			<div class='sample'>
+					<div class="f24">
+							五福字体规范
+						</div>
+			</div>
+			<div class="title-line" id="html">
+				<h4>scss代码</h4>
+				<button>复制</button>
+			</div>
+			<div class='code-html'>
+				<pre class="brush:js;">
+					// 字体
+					// 用于图表内容
+					.f12{
+						font-size:12px;
+					}
+					// 用于文字描述以及内容
+					.f14{
+						font-size:14px;
+						font-weight: normal;
+					}
+					// 用在多数标题及内容
+					.f16{
+						font-size: 16px;
+						font-weight: normal;
+					}
+					// 用在多数标题
+					.f16b{
+						font-size: 16px;
+						font-weight: bold;
+					}
+					// 用在头部大标题
+					.f20{
+						font-size: 20px;
+						font-weight: normal;
+					}
+					// 重要提示的数据
+					.f24{
+						font-size: 24px;
+						font-weight: normal;
+					}
+				</pre>
+			</div>
+			<div class="title-line" id="js">
+				<h4>js代码</h4>
+				<button>复制</button>
+			</div>
+			<div class='code-js'>
+				<pre class="brush:js;">无</pre>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>表单</title>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="SyntaxHighlighter/shCore.min.js"></script>
+		<script type="text/javascript" src="SyntaxHighlighter/shBrushJScript.min.js"></script>
+		<link type="text/css" rel="stylesheet" href="SyntaxHighlighter/shCoreDefault.min.css" />
+		<script type="text/javascript">
+			SyntaxHighlighter.all();
+		</script>
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="layui/css/layui.css" />
+		<link rel="stylesheet" type="text/css" href="scss/style.css" />
+		<style>
+			.sample {
+				background-color: #172142;
+				padding:40px;
+			}
+			.button_list{
+				height: 40px;
+				line-height: 40px;
+				background-color: #01FFE4;
+				border-radius: 5px;
+				font-size: 14px;
+				margin-left: 10px;
+				padding: 0 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="content_inner">
+
+			<h3 id='top'>表单</h3>
+			<div class="sample">
+				<form class="layui-form" action="">
+					<div class="layui-form-item">
+						<label class="layui-form-label">输入框</label>
+						<div class="layui-input-block">
+							<input type="text" name="title" required lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">密码框</label>
+						<div class="layui-input-inline">
+							<input type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off"
+							 class="layui-input">
+						</div>
+						<div class="layui-form-mid layui-word-aux">辅助文字</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">选择框</label>
+						<div class="layui-input-block">
+							<select name="city" lay-verify="required">
+								<option value=""></option>
+								<option value="0">北京</option>
+								<option value="1">上海</option>
+								<option value="2">广州</option>
+								<option value="3">深圳</option>
+								<option value="4">杭州</option>
+							</select>
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">行内选择框</label>
+						<div class="layui-input-block">
+							<div class='select-inline'>
+								<select name="city" lay-verify="required">
+									<option value=""></option>
+									<option value="0">北京</option>
+									<option value="1">上海</option>
+									<option value="2">广州</option>
+									<option value="3">深圳</option>
+									<option value="4">杭州</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">复选框</label>
+						<div class="layui-input-block">
+							<input type="checkbox" name="like[write]" title="写作">
+							<input type="checkbox" name="like[read]" title="阅读" checked>
+							<input type="checkbox" name="like[dai]" title="发呆">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">开关</label>
+						<div class="layui-input-block">
+							<input type="checkbox" name="switch" lay-skin="switch">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">单选框</label>
+						<div class="layui-input-block">
+							<input type="radio" name="sex" value="男" title="男">
+							<input type="radio" name="sex" value="女" title="女" checked>
+						</div>
+					</div>
+					<div class="layui-form-item layui-form-text">
+						<label class="layui-form-label w100p">文本域</label>
+						<textarea name="desc" placeholder="请输入内容" class="layui-textarea w100p"></textarea>
+					</div>
+					<div class="layui-form-item">
+						<button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+						<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+					</div>
+				</form>
+			</div>
+			<div class="title-line" id="description">
+					<h4>说明</h4>
+					<a class="button_list" href="layui.zip" download="layui.js">下载layui.zip压缩包</a> 
+			 
+					<a class="button_list" href="scss/common.scss" download="common.scss">下载common.scss</a> 
+					<a class="button_list" href="img/checkbox_check.svg" download="checkbox_check.svg">复选框svg图片</a> 
+				</div>
+				<div class='code-html'>
+						<pre class="brush:js;">
+						 
+							1.某些文件需要单独引入,上面有下载链接
+							2.注意引入css文件的次序，layui.css第一个，common.css第二个,form.css为第三个
+
+						</pre>
+				</div>
+			<div class="title-line" id="html">
+				<h4>html代码</h4>
+				<button>复制</button>
+			</div>
+			<div class='code-html'>
+				<pre class="brush:js;">
+					<form class="layui-form" action="">
+						<div class="layui-form-item">
+							<label class="layui-form-label">输入框</label>
+							<div class="layui-input-block">
+								<input type="text" name="title" required lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+							</div>
+						</div>
+						<div class="layui-form-item">
+							<label class="layui-form-label">密码框</label>
+							<div class="layui-input-inline">
+								<input type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off"
+								 class="layui-input">
+							</div>
+							<div class="layui-form-mid layui-word-aux">辅助文字</div>
+						</div>
+						<div class="layui-form-item">
+							<label class="layui-form-label">选择框</label>
+							<div class="layui-input-block">
+								<select name="city" lay-verify="required">
+									<option value=""></option>
+									<option value="0">北京</option>
+									<option value="1">上海</option>
+									<option value="2">广州</option>
+									<option value="3">深圳</option>
+									<option value="4">杭州</option>
+								</select>
+							</div>
+						</div>
+						<div class="layui-form-item">
+							<label class="layui-form-label">行内选择框</label>
+							<div class="layui-input-block">
+								<div class='select-inline'>
+									<select name="city" lay-verify="required">
+										<option value=""></option>
+										<option value="0">北京</option>
+										<option value="1">上海</option>
+										<option value="2">广州</option>
+										<option value="3">深圳</option>
+										<option value="4">杭州</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="layui-form-item">
+							<label class="layui-form-label">复选框</label>
+							<div class="layui-input-block">
+								<input type="checkbox" name="like[write]" title="写作">
+								<input type="checkbox" name="like[read]" title="阅读" checked>
+								<input type="checkbox" name="like[dai]" title="发呆">
+							</div>
+						</div>
+						<div class="layui-form-item">
+							<label class="layui-form-label">开关</label>
+							<div class="layui-input-block">
+								<input type="checkbox" name="switch" lay-skin="switch">
+							</div>
+						</div>
+						<div class="layui-form-item">
+							<label class="layui-form-label">单选框</label>
+							<div class="layui-input-block">
+								<input type="radio" name="sex" value="男" title="男">
+								<input type="radio" name="sex" value="女" title="女" checked>
+							</div>
+						</div>
+						<div class="layui-form-item layui-form-text">
+							<label class="layui-form-label w100p">文本域</label>
+							<textarea name="desc" placeholder="请输入内容" class="layui-textarea w100p"></textarea>
+						</div>
+						<div class="layui-form-item">
+								<button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+								<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+						</div>
+					</form>
+				</pre>
+			</div>
+			<div class="title-line" id="js">
+				<h4>js代码</h4>
+				<button>复制</button>
+			</div>
+			<div class='code-js'>
+				<pre class="brush:js;">
+					<script src="layui/layui.js" type="text/javascript" charset="utf-8"></script>
+					<script>
+						//Demo
+						layui.use('form', function() {
+							var form = layui.form;
+
+							//监听提交
+							form.on('submit(formDemo)', function(data) {
+								layer.msg(JSON.stringify(data.field));
+								return false;
+							});
+						});
+					</script>
+				</pre>
+			</div>
+		</div>
+	</body>
+	<script src="layui/layui.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		//Demo
+		layui.use('form', function() {
+			var form = layui.form;
+
+			//监听提交
+			form.on('submit(formDemo)', function(data) {
+				layer.msg(JSON.stringify(data.field));
+				return false;
+			});
+		});
+	</script>
+</html>

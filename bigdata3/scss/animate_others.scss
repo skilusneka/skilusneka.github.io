@@ -1,0 +1,86 @@
+// 其他动效
+.scoll_num >span{
+			    position: relative; 
+			    display: inline-block;
+				text-indent: 0;
+			  
+			}
+			.scoll_num{
+			    display: inline-block;
+			    overflow: hidden;
+			    height: 20px;
+			
+			     
+			}
+			.scoll_num>span span{
+			    display: block;
+			    line-height: normal;
+			    height: 20px;
+			    line-height: 19px;
+			}
+			
+			.flip-container{
+			    display:inline-block;
+			    border:1px solid #aaa;
+			    -webkit-perspective:500;
+			    -moz-perspective: 500;
+			    -ms-perspective: 500;
+			    perspective: 500;
+			    -ms-transform: perspective(500px);
+			    -moz-transform:perspective(500px);
+			    transform:perspective(500px);
+			
+			.flipper {
+			    position: relative;
+			    width: 200px;
+			    height: 200px;
+			    transition: 0.6s;
+			    transform-style: preserve-3d; /*重要*/
+			}
+			/* 触发翻转 */
+			&:hover .flipper{
+			    transform: rotateY(180deg);
+			}
+			.front ,.back{
+			    position: absolute;
+			    left: 0;
+			    top: 0;
+			    backface-visibility: hidden;  /*重要*/
+			    width: 100%;
+			    height: 100%;
+			}
+			.front {
+			    transform: rotateY(0deg);
+			    z-index: 2;
+			    background: #1a6aff;
+			}
+			.back {
+			    transform: rotateY(-180deg);
+			    background: #359FFF;
+			}
+			
+			}
+			// 跑马灯
+			 .horse{
+			     width:500px;
+			     display:flex;
+			     align-items:center;
+			     justify-content:space-between;
+			
+			 }
+			 .horse_item{
+			     width:15px;
+			     height:10px;
+			     background-color:skyblue;
+					position:relative;
+			 }
+			 .digi-ani-scan{
+			 	display: block;
+			 	width:auto;
+			 	float:left;
+			 	overflow: hidden;
+			 }
+			 .digi-ani-scan-outer{
+			 	overflow: hidden;
+			 	height:auto;
+			 }

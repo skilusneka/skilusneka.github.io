@@ -1,0 +1,113 @@
+// 弹窗1
+.layui-layer{
+	box-shadow:none;
+	border:1px solid #46EBE3;
+	background-color: #174B4D!important;
+	.layui-layer-btn0{
+		width: 90px;
+		height: 30px;
+		background-color: #46EBE3!important;
+		line-height:30px;
+		border:none;
+		color:#000000!important;
+		text-indent:0;
+		font-size: 12px;
+		padding:0;
+		text-align:center;
+	}
+	.layui-layer-btn1{
+		width: 90px;
+		height: 30px;
+		background-color: #A2B7B7;
+		color:#000000;
+		text-indent:0;
+		font-size: 12px;
+		padding:0;
+		text-align:center;
+		border:1px solid #46EBE3;
+	}
+}
+.layui-layer-title{
+	background-color: #46EBE3!important;
+	font-size: 14px!important;
+	color:#000000;
+	border-bottom:none!important;
+}
+.layui-layer-content{
+	background-color: #000000!important;
+	min-height: 200px;
+	color:#46EBE3;
+	font-size: 14px!important;
+	padding:12px;
+}
+// 弹窗样式2
+.layer-alter{
+	background: #000000!important;
+	border:1px solid #46EBE3!important;
+	box-shadow:0px 0px 14px #46EBE3 inset!important;
+	&:before{
+		content: '';
+		display: block;
+		position:absolute;
+		left:-20px;
+		top:10px;
+		width: 0;
+		height: 0;
+		border-width: 0px 10px 10px;
+		border-style: solid;
+		border-color: transparent transparent #46EBE3;	
+		transform: rotate(-90deg);
+	}
+	.layui-layer-title{
+		background: none!important;
+		font-size: 14px!important;
+		border-bottom:none!important;
+		color:#fff;
+	}
+	.layui-layer-content{
+		background: none!important;
+		min-height: 200px;
+		color:#46EBE3;
+		font-size: 14px!important;
+		padding:12px;
+	}
+	.layui-layer-setwin cite{
+		display:none;
+	}
+	.layui-layer-setwin .layui-layer-ico,.layui-layer-setwin .layui-layer-min{
+		width: 20px;
+		height: 20px;
+		border:1px solid rgba(70,235,227,0.6);
+		border-radius:50%;
+		background-color: rgba(70,235,227,0.3);
+		background-size:60%;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+	.layui-layer-setwin .layui-layer-close1{
+		background-image: url(img/popup_close.svg)!important;
+		
+	}
+	.layui-layer-setwin .layui-layer-max{
+		background-image: url(img/popup_enlarge.svg)!important;
+
+	}
+	.layui-layer-setwin .layui-layer-min{
+		background-image: url(img/popup_shrink.svg)!important;
+	
+	}
+	img{
+		position:absolute;
+		width:auto;
+		height:8%;
+		top:96%;
+		right:0;
+	}
+	img:last-child{
+		position:absolute;
+		width:auto;
+		height:8%;
+		top:-4%;
+		left:0;
+	}
+}

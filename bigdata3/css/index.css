@@ -1,0 +1,222 @@
+
+*{
+	margin:0;
+	padding:0;
+	list-style:none;
+	font-family: '微软雅黑','PingFang SC';
+	font-weight:normal;
+	font-size:16px;
+	color:#ffffff;
+	box-sizing:content-box;
+	outline: none;
+	cursor:default;
+	resize: none;
+}
+
+/* 代码高亮插件样式 开始*/
+::-webkit-scrollbar {/*滚动条整体样式*/
+			width: 8px;     /*高宽分别对应横竖滚动条的尺寸*/
+			height: 8px;
+			}
+::-webkit-scrollbar-thumb {
+			background-color: #81AEFF;
+			border-radius: 4px;
+			}
+::-webkit-scrollbar-track {
+			-webkit-box-shadow: none;
+			background-color: rgba(0,0,0,0);
+			}
+::-webkit-scrollbar-corner{
+			background-color: rgba(0,0,0,0);
+}
+ .gutter .line {
+     display: none !important;
+     background: red !important;
+ }
+.syntaxhighlighter .plain, .syntaxhighlighter .plain a{
+	color:#ffffff!important;
+}
+.syntaxhighlighter .string, .syntaxhighlighter .string a{
+	color:#01FFE4!important;
+}
+.syntaxhighlighter .keyword {
+    color: #01FFE4 !important;
+}
+.syntaxhighlighter .comments, .syntaxhighlighter .comments a {
+    color: #2ECC71 !important;
+}
+ .syntaxhighlighter {
+     background-color: rgba(255,255,255,0.08) !important;
+     border: 1px dotted rgba(255,255,255,0.1);
+     width: 98% !important;
+     margin: 10px 1% !important;
+     padding: 2% !important;
+     /* height: 736px !important; */
+     overflow-y: auto;
+     box-sizing: border-box;
+ }
+
+ .syntaxhighlighter .line.alt2 {
+     background:none!important;
+	 
+ }
+
+ .syntaxhighlighter .line.alt1 {
+     background:none !important;
+	 
+ }
+
+ .syntaxhighlighter table td.code .line {
+     padding: 3px 1em !important;
+ }
+
+ /* 代码高亮插件样式 结束*/
+body>.header{
+	width:100%;
+	height:40px;
+	background-color: #0840A6;
+}
+body>.header h2{
+	color:#ffffff;
+	line-height:40px;
+	font-size:18px;
+	text-indent:40px;
+	width:auto;
+	float:left;
+	display: block;
+}
+body>.nav{
+	width:160px;
+	height:calc(100% - 40px);
+	overflow:auto;
+	background-color: #3E6CBF;
+	position:fixed;
+	left:0;
+	top:40px;
+}
+body>.nav dl{
+	width:100%;
+	height:auto;
+}
+body>.nav dl:last-child{
+	margin-bottom: 10px;
+}
+body>.nav *{
+	text-indent:40px;
+}
+body>.nav dt{
+	font-weight: bold;
+	font-size:18px;
+	line-height:32px;
+	margin-top:15px;
+	margin-bottom: 10px;
+	color:#74FFF0;
+}
+body>.nav dd{
+	transition: 0.2s;
+	margin-top: 10px;
+	cursor:pointer;
+	line-height:32px;
+	color:#fff;
+}
+body>.nav dd:hover{
+	background-color: #5390FF;
+}
+body>.nav .current{
+	background-color: #5390FF;
+}
+body>.content{
+	position:fixed;
+	left:160px;
+	width:calc(100% - 160px);
+	height:calc(100% - 40px);
+	overflow: auto;
+}
+.sample{
+	width: calc(100% - 40px);
+	height:auto;
+	min-height:40px;
+	margin:20px auto;
+	border: 1px solid #01FFE4;
+	line-height:40px;
+	text-indent:20px;
+}
+.title-line{
+	width:100%;
+	overflow: hidden;
+	margin-top: 10px;
+}
+.content_inner>h3{
+	width:100%;
+	margin-top: 10px;
+	line-height:40px;
+	font-size:18px;
+	text-indent: 20px;
+	font-weight:bold;
+	display:block;
+	width:auto;
+}
+.content_inner .title-line h4{
+	line-height:40px;
+	font-size:18px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-indent: 20px;
+	font-weight:bold;
+	width:auto;
+	display:block;
+	float:left;
+}
+.content_inner>.code-js,.content_inner>.code-html{
+	width: calc(100% - 40px);
+	margin-left:20px;
+	padding:5px;
+	margin-bottom: 20px;
+}
+.content_inner .title-line button{
+	transition: 0.2s;
+	float:right;
+	width:120px;
+	height:32px;
+	border-radius:4px;
+	margin-top: 4px;
+	margin-right: 20px;
+	background-color: #3498DB;
+	border-color:#2980B9;
+	color:#ffffff;
+	cursor:pointer;
+}
+.content_inner .title-line button:hover{
+	opacity: 0.8;
+}
+.content_inner .title-line button:active{
+	opacity: 1;
+}
+.content_inner .title-line .copyed{
+	background-color: #2ECC71;
+	border-color:#27AE60;
+}
+.header>ul{
+	width:auto;
+	height:auto;
+	overflow: hidden;
+	float:right;
+	margin-right: 20px;
+	}
+.header>ul li{
+	transition: 0.2s;
+	color:#ffffff;
+	width:auto;
+	height:40px;
+	text-align: center;
+	line-height:40px;
+	cursor:pointer;	
+	float:left;
+	margin-left: 20px;
+}
+.header>ul li:hover{
+	text-shadow: 0px 0px 4px rgba(255,255,255,0.4);
+}
+body{
+	background-color:#172142;
+}

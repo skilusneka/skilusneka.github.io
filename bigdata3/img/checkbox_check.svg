@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="19px" height="16px" viewBox="0 0 19 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="表单" transform="translate(-365.000000, -502.000000)" fill="#46EBE3" fill-rule="nonzero">
+            <g transform="translate(88.000000, 143.000000)" id="复选框">
+                <g transform="translate(3.000000, 348.000000)">
+                    <g id="Group-13" transform="translate(126.000000, 3.500000)">
+                        <g id="选中" transform="translate(93.000000, 0.000000)">
+                            <g id="对号" transform="translate(54.531250, 7.291016)">
+                                <path d="M0.966525459,8.34191701 C0.966525459,8.34191701 5.62063748,12.14896 6.08296839,15.3867765 C6.08296839,15.3867765 12.1856995,5.39667654 18.9665255,4.50283815 C18.9665255,4.50283815 16.9014583,2.99789441 17.5795327,0.6192708 C17.5795327,0.6192708 13.8192591,0.994474151 6.73021935,11.9978841 L3.40778228,6.35816209 L0.966525459,8.34191701 Z" id="Shape"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

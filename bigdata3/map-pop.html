@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>地图弹框</title>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="SyntaxHighlighter/shCore.min.js"></script>
+		<script type="text/javascript" src="SyntaxHighlighter/shBrushJScript.min.js"></script>
+		<link type="text/css" rel="stylesheet" href="SyntaxHighlighter/shCoreDefault.min.css" />
+		<script type="text/javascript">
+			SyntaxHighlighter.all();
+		</script>
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="scss/style.css" />
+		<style>
+			.sample {
+				background-color: #333333;
+				padding: 40px;
+				height:400px;
+			}
+			.sample .sample-dot{
+				width: 20px;
+				height: 20px;
+				background-color: #0067FF;
+				border-radius:50%;
+			}
+			.sample .sample-dot2{
+				width: 20px;
+				height: 20px;
+				background-color: #0099CC;
+				margin-left: 50%;
+				margin-top: 120px;
+				border-radius:50%;
+				cursor:pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="content_inner">
+			<h3 id='top'>地图弹框</h3>
+			<div class="sample">
+				<!-- 地图悬浮点 -->
+				<div class='sample-dot'></div>
+				<!-- 地图点击点 -->
+				<div class='sample-dot2'></div>
+				<!-- 地图悬浮弹窗 -->
+				<div class="map-pop-mousein">
+					<div class='map-pop-inner'>
+						<ul>
+							<li>
+								<p class="f16 w30p">车牌号</p>
+								<p class="f16 w40p">***</p>
+							</li>
+							<li>
+								<p class="f14 w30p">状态</p>
+								<p class="f14 w40p">在线</p>
+							</li>
+							<li>
+								<p class="f14 w30p">更新时间</p>
+								<p class="f14 w40p">2019-01-09</p>
+								<p class="f14 w30p">12:02</p>
+							</li>
+						</ul>
+						<button>周边轨迹</button>
+						<div class="pop-close"></div>
+					</div>
+				</div>
+				<!-- 地图点击弹窗 -->
+				<div class="map-pop-mouseclick-outer">
+					<img src="img/map-pop-mouseclick-arrow.svg" class='arrow'>
+					<div class="bg">
+						<div class="bg-lt"></div>
+						<div class="bg-rt"></div>
+						<div class="bg-lb"></div>
+						<div class="bg-rb"></div>
+					</div>
+					<div class="map-pop-mouseclick">
+						<div class='map-pop-inner'>
+							<ul>
+								<li>
+									<p class="f16 w30p">车牌号</p>
+									<p class="f16 w40p">***</p>
+								</li>
+								<li>
+									<p class="f14 w30p">状态</p>
+									<p class="f14 w40p">在线</p>
+								</li>
+								<li>
+									<p class="f14 w30p">更新时间</p>
+									<p class="f14 w40p">2019-01-09</p>
+									<p class="f14 w30p">12:02</p>
+								</li>
+							</ul>
+							<button>周边轨迹</button>
+							<div class="pop-close"></div>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="map-pop-mouseclick-outer map-pop-hascheck">
+					<img src="img/map-pop-mouseclick-arrow.svg" class='arrow'>
+					<div class="bg">
+						<div class="bg-lt"></div>
+						<div class="bg-rt"></div>
+						<div class="bg-lb"></div>
+						<div class="bg-rb"></div>
+					</div>
+					<div class="map-pop-mouseclick">
+						<div class='map-pop-inner'>
+							<ul>
+								<li><h4>多选</h4></li>
+								<li>
+									<div class="checkbox checkbox-checked"></div>
+									<i class='iconfont'>&#xe67e;</i>
+								</li>
+							</ul>
+							
+							<button>周边轨迹</button>
+							<div class="pop-close"></div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="title-line" id="html">
+				<h4>html代码</h4>
+				<button>复制</button>
+			</div>
+			<div class='code-html'>
+				<pre class="brush:js;">
+
+					<!-- 地图悬浮点 -->
+					<div class='sample-dot'></div>
+					<!-- 地图点击点 -->
+					<div class='sample-dot2'></div>
+					<!-- 地图悬浮弹窗 -->
+					<div class="map-pop-mousein">
+						<div class='map-pop-inner'>
+							<ul>
+								<li>
+									<p class="f16 w30p">车牌号</p>
+									<p class="f16 w40p">***</p>
+								</li>
+								<li>
+									<p class="f14 w30p">状态</p>
+									<p class="f14 w40p">在线</p>
+								</li>
+								<li>
+									<p class="f14 w30p">更新时间</p>
+									<p class="f14 w40p">2019-01-09</p>
+									<p class="f14 w30p">12:02</p>
+								</li>
+							</ul>
+							<button>周边轨迹</button>
+							<div class="pop-close"></div>
+						</div>
+					</div>
+					<!-- 地图点击弹窗 -->
+					<div class="map-pop-mouseclick-outer">
+						<img src="img/map-pop-mouseclick-arrow.svg" class='arrow'>
+						<div class="bg">
+							<div class="bg-lt"></div>
+							<div class="bg-rt"></div>
+							<div class="bg-lb"></div>
+							<div class="bg-rb"></div>
+						</div>
+						<div class="map-pop-mouseclick">
+							<div class='map-pop-inner'>
+								<ul>
+									<li>
+										<p class="f16 w30p">车牌号</p>
+										<p class="f16 w40p">***</p>
+									</li>
+									<li>
+										<p class="f14 w30p">状态</p>
+										<p class="f14 w40p">在线</p>
+									</li>
+									<li>
+										<p class="f14 w30p">更新时间</p>
+										<p class="f14 w40p">2019-01-09</p>
+										<p class="f14 w30p">12:02</p>
+									</li>
+								</ul>
+								<button>周边轨迹</button>
+								<div class="pop-close"></div>
+							</div>
+						</div>
+						
+					</div>
+				</pre>
+			</div>
+			<div class="title-line" id="js">
+				<h4>js代码</h4>
+				<button>复制</button>
+			</div>
+			<div class='code-js'>
+				<pre class="brush:js;">
+					// 悬浮弹窗
+					$('.sample-dot').mouseenter(function() {
+						var y = $(this).offset().top;
+						var x = $(this).offset().left;
+						$('.map-pop-mousein').css('top', (y + 10) + 'px');
+						$('.map-pop-mousein').css('left', (x + 10) + 'px');
+						$('.map-pop-mousein').css('transform', 'scale(1)');
+					});
+					$('.map-pop-mousein .pop-close').click(function() {
+						$('.map-pop-mousein').css('transform', 'scale(0)');
+					});
+					// 点击弹窗
+					$('.sample-dot2').click(function() {
+						var y = $(this).offset().top;
+						var x = $(this).offset().left;
+						$('.map-pop-mouseclick-outer').css('top', (y - 215) + 'px');
+						$('.map-pop-mouseclick-outer').css('left', (x - 103) + 'px');
+						$('.map-pop-mouseclick-outer').css('transform', 'scale(1)');
+					});
+					$('.map-pop-mouseclick-outer .pop-close').click(function() {
+						$('.map-pop-mouseclick-outer').css('transform', 'scale(0)');
+					});
+				</pre>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		// 悬浮弹窗
+		$('.sample-dot').mouseenter(function() {
+			var y = $(this).offset().top;
+			var x = $(this).offset().left;
+			$('.map-pop-mousein').css('top', (y + 10) + 'px');
+			$('.map-pop-mousein').css('left', (x + 10) + 'px');
+			$('.map-pop-mousein').css('transform', 'scale(1)');
+		});
+		$('.map-pop-mousein .pop-close').click(function() {
+			$('.map-pop-mousein').css('transform', 'scale(0)');
+		});
+		// 点击弹窗
+		$('.sample-dot2').click(function() {
+			var y = $(this).offset().top;
+			var x = $(this).offset().left;
+			$('.map-pop-mouseclick-outer').css('top', (y - 215) + 'px');
+			$('.map-pop-mouseclick-outer').css('left', (x - 103) + 'px');
+			$('.map-pop-mouseclick-outer').css('transform', 'scale(1)');
+		});
+		$('.map-pop-mouseclick-outer .pop-close').click(function() {
+			$('.map-pop-mouseclick-outer').css('transform', 'scale(0)');
+		});
+	</script>
+</html>

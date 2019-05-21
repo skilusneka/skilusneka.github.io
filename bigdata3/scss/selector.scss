@@ -1,0 +1,43 @@
+// 下拉选择
+.selector{
+	
+	height:auto;
+	postion:absolute;
+	*{
+		text-indent:15px;
+		line-height:35px;
+		color:#ffffff;
+		width:100%;
+		cursor: pointer;
+		background-color: #0067FF;
+		
+	}
+	div{
+		transition:0.5s;
+		background: none;
+		height:0px;
+		overflow: hidden;
+	}
+	dd{
+		p{
+			float:right;
+			width:auto;
+			background: none;
+			margin-right: 15px;
+		}
+	}
+	dd:hover{
+		text-shadow:0px 0px 4px rgba(255,255,255,0.4)
+	}
+	dt{
+		opacity: 0.6;
+	}
+	dt:hover{
+		width:100%;
+		opacity: 1;
+	}
+}
+.selector-show>div{
+	height:105px;
+	// 这里的高度请自己计算 35*(下拉选项个数+1)
+}
